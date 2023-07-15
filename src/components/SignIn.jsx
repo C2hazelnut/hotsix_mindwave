@@ -2,7 +2,9 @@ import React from "react";
 
 const SignIn = () => {
   return (
+    
     <section id='signin'>
+      
         <h2 className="text-center mt-0">Sign In</h2>
         <hr className="divider" /> <br></br>
 
