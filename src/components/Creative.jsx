@@ -3,7 +3,7 @@ import React from 'react';
 const Creative = () => {
   return (
     <>
-      <nav className="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav" >
+      {/* <nav className="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
         <div className="container px-4 px-lg-5">
           <a className="navbar-brand" href="#page-top">마음의 파도</a>
           <button className="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -20,7 +20,7 @@ const Creative = () => {
             </ul>
           </div>
         </div>
-      </nav>
+      </nav> */}
 
       <header className="masthead">
         <div className="container px-4 px-lg-5 h-100">
@@ -36,32 +36,6 @@ const Creative = () => {
           </div>
         </div>
       </header>
-
-      <section className="page-section bg-primary" id="about">
-        <div className="container px-4 px-lg-5">
-          <div className="row gx-4 gx-lg-5 justify-content-center">
-            <div className="col-lg-8 text-center">
-              <h2 className="text-black mt-0">About...</h2>
-              <hr className="divider" />
-              <p className="text-black-75 mb-4">
-                자신을 차갑게 대하는 사람들과의 관계에 반복적으로 빠져드나요?<br></br><br></br>
-                가까운 사람들조차 자신을 충분히 이해하거나 돌보지 않는다고 느끼나요?<br></br><br></br>
-                스스로가 결함이 있는 사람처럼 느껴져 누구에게도 사랑받지 못할 것이라고 믿나요?<br></br><br></br>
-                남의 욕구를 내 욕구보다 우선하여 자신의 욕구 충족을 미루고 있나요?<br></br><br></br>
-                뭔가 나쁜 일이 일어날 것만 같아 두렵나요?<br></br><br></br>
-                아무리 인정받거나 성취를 해도 여전히 자신은 불행하고 무가치하며 그럴 자격이 없다고 느끼나요?<br></br><br></br><br></br><br></br>
-
-                우리는 이러한 패턴들을 "삶의 덫"이라고 부릅니다.
-                <br></br><br></br><br></br>
-                우리는 테스트를 통해 사람들이 가장 흔히 빠져드는 11가지 덫에 대해서
-                스스로를 진단해보겠습니다.
-              </p><br></br>
-              <a className="btn btn-light btn-xl" href="#services">Get Started</a>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <section className="page-section" id="services">
         <div className="container px-4 px-lg-5">
           <h2 className="text-center mt-0">At Your Service</h2>
@@ -98,67 +72,6 @@ const Creative = () => {
           </div>
         </div>
       </section>
-
-      <div id="portfolio">
-        <div className="container-fluid p-0">
-          <div className="row g-0">
-            <div className="col-lg-4 col-sm-6">
-              <a className="portfolio-box" href="assets/img/portfolio/fullsize/1.jpg" title="Project Name">
-                <img className="img-fluid" src="assets/img/portfolio/thumbnails/1.jpg" alt="..." />
-                <div className="portfolio-box-caption">
-                  <div className="project-category text-white-50">Category</div>
-                  <div className="project-name">Project Name</div>
-                </div>
-              </a>
-            </div>
-            <div className="col-lg-4 col-sm-6">
-              <a className="portfolio-box" href="assets/img/portfolio/fullsize/2.jpg" title="Project Name">
-                <img className="img-fluid" src="assets/img/portfolio/thumbnails/2.jpg" alt="..." />
-                <div className="portfolio-box-caption">
-                  <div className="project-category text-white-50">Category</div>
-                  <div className="project-name">Project Name</div>
-                </div>
-              </a>
-            </div>
-            <div className="col-lg-4 col-sm-6">
-              <a className="portfolio-box" href="assets/img/portfolio/fullsize/3.jpg" title="Project Name">
-                <img className="img-fluid" src="assets/img/portfolio/thumbnails/3.jpg" alt="..." />
-                <div className="portfolio-box-caption">
-                  <div className="project-category text-white-50">Category</div>
-                  <div className="project-name">Project Name</div>
-                </div>
-              </a>
-            </div>
-            <div className="col-lg-4 col-sm-6">
-              <a className="portfolio-box" href="assets/img/portfolio/fullsize/4.jpg" title="Project Name">
-                <img className="img-fluid" src="assets/img/portfolio/thumbnails/4.jpg" alt="..." />
-                <div className="portfolio-box-caption">
-                  <div className="project-category text-white-50">Category</div>
-                  <div className="project-name">Project Name</div>
-                </div>
-              </a>
-            </div>
-            <div className="col-lg-4 col-sm-6">
-              <a className="portfolio-box" href="assets/img/portfolio/fullsize/5.jpg" title="Project Name">
-                <img className="img-fluid" src="assets/img/portfolio/thumbnails/5.jpg" alt="..." />
-                <div className="portfolio-box-caption">
-                  <div className="project-category text-white-50">Category</div>
-                  <div className="project-name">Project Name</div>
-                </div>
-              </a>
-            </div>
-            <div className="col-lg-4 col-sm-6">
-              <a className="portfolio-box" href="assets/img/portfolio/fullsize/6.jpg" title="Project Name">
-                <img className="img-fluid" src="assets/img/portfolio/thumbnails/6.jpg" alt="..." />
-                <div className="portfolio-box-caption p-3">
-                  <div className="project-category text-white-50">Category</div>
-                  <div className="project-name">Project Name</div>
-                </div>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
 
       <section className="page-section bg-dark text-white" id="contact">
         <div className="container px-4 px-lg-5">
