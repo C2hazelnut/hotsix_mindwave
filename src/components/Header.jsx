@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -26,30 +27,28 @@ const Header = () => {
             <ul className="navbar-nav ms-auto my-2 my-lg-0">
               <li className="nav-item">
                 <a className="nav-link" href="#about">
-                  진단하기
+                  <Link to="/about">진단하기</Link>
                 </a>
               </li>
               <li className="nav-item">
                 <a className="nav-link" href="#services">
-                  마음일지
+                  <Link to="/services">마음일지</Link>
                 </a>
               </li>
               <li className="nav-item">
                 <a className="nav-link" href="#portfolio">
-                  로그인
+                  <Link to="/signin">로그인</Link>
                 </a>
               </li>
               <li className="nav-item">
                 <a className="nav-link" href="#contact">
-                  회원가입
+                  <Link to="/signup">회원가입</Link>
                 </a>
               </li>
             </ul>
           </div>
         </div>
       </nav>
-
-
     </>
   );
 };
