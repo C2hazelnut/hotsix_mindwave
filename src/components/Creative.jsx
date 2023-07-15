@@ -15,6 +15,8 @@ const Creative = () => {
               <li className="nav-item"><a className="nav-link" href="#services">Services</a></li>
               <li className="nav-item"><a className="nav-link" href="#portfolio">Portfolio</a></li>
               <li className="nav-item"><a className="nav-link" href="#contact">Contact</a></li>
+              <li className="nav-item"><a className="nav-link" href="#signup">Sign Up</a></li>
+              <li className="nav-item"><a className="nav-link" href="#signin">Sign In</a></li>
             </ul>
           </div>
         </div>
@@ -34,7 +36,6 @@ const Creative = () => {
           </div>
         </div>
       </header>
-
       <section className="page-section" id="services">
         <div className="container px-4 px-lg-5">
           <h2 className="text-center mt-0">At Your Service</h2>
@@ -104,6 +105,8 @@ const Creative = () => {
           </div>
         </div>
       </section>
+
+      
 
       <footer className="bg-light py-5">
         <div className="container px-4 px-lg-5">
