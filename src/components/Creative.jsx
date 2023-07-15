@@ -3,7 +3,7 @@ import React from 'react';
 const Creative = () => {
   return (
     <>
-      <nav className="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
+      {/* <nav className="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
         <div className="container px-4 px-lg-5">
           <a className="navbar-brand" href="#page-top">마음의 파도</a>
           <button className="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -18,7 +18,7 @@ const Creative = () => {
             </ul>
           </div>
         </div>
-      </nav>
+      </nav> */}
 
       <header className="masthead">
         <div className="container px-4 px-lg-5 h-100">
