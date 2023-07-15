@@ -3,7 +3,7 @@ import React from 'react';
 const Creative = () => {
   return (
     <>
-      <nav className="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
+      <nav className="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav" >
         <div className="container px-4 px-lg-5">
           <a className="navbar-brand" href="#page-top">마음의 파도</a>
           <button className="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -15,6 +15,8 @@ const Creative = () => {
               <li className="nav-item"><a className="nav-link" href="#services">Services</a></li>
               <li className="nav-item"><a className="nav-link" href="#portfolio">Portfolio</a></li>
               <li className="nav-item"><a className="nav-link" href="#contact">Contact</a></li>
+              <li className="nav-item"><a className="nav-link" href="#signup">Sign Up</a></li>
+              <li className="nav-item"><a className="nav-link" href="#signin">Sign In</a></li>
             </ul>
           </div>
         </div>
@@ -39,10 +41,22 @@ const Creative = () => {
         <div className="container px-4 px-lg-5">
           <div className="row gx-4 gx-lg-5 justify-content-center">
             <div className="col-lg-8 text-center">
-              <h2 className="text-white mt-0">We've got what you need!</h2>
-              <hr className="divider divider-light" />
-              <p className="text-white-75 mb-4">Start Bootstrap has everything you need to get your new website up and running in no time! Choose one of our open source, free to download, and easy to use themes! No strings attached!</p>
-              <a className="btn btn-light btn-xl" href="#services">Get Started!</a>
+              <h2 className="text-black mt-0">About...</h2>
+              <hr className="divider" />
+              <p className="text-black-75 mb-4">
+                자신을 차갑게 대하는 사람들과의 관계에 반복적으로 빠져드나요?<br></br><br></br>
+                가까운 사람들조차 자신을 충분히 이해하거나 돌보지 않는다고 느끼나요?<br></br><br></br>
+                스스로가 결함이 있는 사람처럼 느껴져 누구에게도 사랑받지 못할 것이라고 믿나요?<br></br><br></br>
+                남의 욕구를 내 욕구보다 우선하여 자신의 욕구 충족을 미루고 있나요?<br></br><br></br>
+                뭔가 나쁜 일이 일어날 것만 같아 두렵나요?<br></br><br></br>
+                아무리 인정받거나 성취를 해도 여전히 자신은 불행하고 무가치하며 그럴 자격이 없다고 느끼나요?<br></br><br></br><br></br><br></br>
+
+                우리는 이러한 패턴들을 "삶의 덫"이라고 부릅니다.
+                <br></br><br></br><br></br>
+                우리는 테스트를 통해 사람들이 가장 흔히 빠져드는 11가지 덫에 대해서
+                스스로를 진단해보겠습니다.
+              </p><br></br>
+              <a className="btn btn-light btn-xl" href="#services">Get Started</a>
             </div>
           </div>
         </div>
@@ -178,6 +192,8 @@ const Creative = () => {
           </div>
         </div>
       </section>
+
+      
 
       <footer className="bg-light py-5">
         <div className="container px-4 px-lg-5">
