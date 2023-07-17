@@ -11391,3 +11391,21 @@ header.masthead .h1 {
 #portfolio .container-xxl .portfolio-box:hover .portfolio-box-caption {
   opacity: 1;
 }
+
+.diary{
+  margin: 20px;
+  padding: 20px;
+  background-color: #282c34;
+  min-height: 100vh;
+  opacity: 0.9;
+  border-radius: 1%;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+textarea{
+  width: 100%;
+  height: 1000px;
+  border: none;
+  resize: none;
+}
