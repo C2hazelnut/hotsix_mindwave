@@ -26,24 +26,24 @@ const Header = () => {
           <div className="collapse navbar-collapse" id="navbarResponsive">
             <ul className="navbar-nav ms-auto my-2 my-lg-0">
               <li className="nav-item">
-                <a className="nav-link" href="#about">
-                  <Link to="/about">진단하기</Link>
-                </a>
+                <Link className="nav-link" to="/about ">
+                  진단하기
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#services">
-                  <Link to="/services">마음일지</Link>
-                </a>
+                <Link className="nav-link" to="/services">
+                  마음일지
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#portfolio">
-                  <Link to="/signin">로그인</Link>
-                </a>
+                <Link className="nav-link" to="/signin">
+                  로그인
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#contact">
-                  <Link to="/signup">회원가입</Link>
-                </a>
+                <Link className="nav-link" to="/signup">
+                  회원가입
+                </Link>
               </li>
             </ul>
           </div>
