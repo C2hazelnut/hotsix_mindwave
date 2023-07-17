@@ -6,12 +6,11 @@ const Header = () => {
     <>
       <nav
         className="navbar navbar-expand-lg navbar-light fixed-top py-3"
-        id="mainNav"
-      >
+        id="mainNav">
         <div className="container px-4 px-lg-5">
-          <a className="navbar-brand" href="#page-top">
-            마음의 파도
-          </a>
+            <Link className="navbar-brand" to="/">
+              마음의 파도
+            </Link>
           <button
             className="navbar-toggler navbar-toggler-right"
             type="button"
