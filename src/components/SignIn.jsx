@@ -14,20 +14,21 @@ const SignIn = () => {
               <form id="login" data-sb-form-api-token="API-TOKEN">
                 {/* ID input */}
                 <div class="form-floating mb-3">
-                  <input class="form-control " id="id" type="text" placeholder="Enter your ID…" data-sb-validations="required"/>
+                  <input class="form-control " id="id" type="text" placeholder="Enter your ID…" required/>
                   <label for="id">ID</label>
                   <div class="invalid-feedback" data-sb-feedback="id:required">A ID is required.</div>
                 </div>
+                
                 {/* PASSWORD input */}
                 <div class="form-floating mb-3">
-                  <input class="form-control" id="password" type="text" placeholder="Enter your Password…" data-sb-validations="required"/>
+                  <input class="form-control" id="password" type="password" placeholder="Enter your Password…" required/>
                   <label for="password">Password</label>
                   <div class="invalid-feedback" data-sb-feedback="password:required">A password is required.</div>
                 </div>
 
                 {/* SUBMIT button */}
                 <div class="d-grid">
-                  <button class="btn btn-primary btn-xl disabled" id="submitButton" type="submit">Login</button>
+                  <button class="btn btn-primary btn-xl" id="submitButton" type="submit">Login</button>
                 </div>
              </form> 
             </div>
@@ -36,5 +37,6 @@ const SignIn = () => {
       </header>
     );
 };
+
 
 export default SignIn;
