@@ -14,7 +14,7 @@ const Services = () => {
               />
             </div>
             <div class="d-grid">
-              <button id="addButton" type="add">
+              <button className="btn btn-primary btn-xl" id="addButton" type="add">
                 add
               </button>
           </div>
