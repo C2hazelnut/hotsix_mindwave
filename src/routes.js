@@ -5,7 +5,8 @@ import Services from "./components/Services";
 import SignIn from "./components/SignIn";
 import SignUp from "./components/SignUp";
 import Creative from "./components/Creative";
-import TestStartPage from "./components/TestStratPage";
+// import Test from "./components/Test";
+import QnaComponent from "./components/QnaComponent";
 import { Link } from 'react-router-dom';
 
 const AppRoutes = () => {
@@ -16,7 +17,7 @@ const AppRoutes = () => {
       <Route path="/services" element={<Services />} />
       <Route path="/signin" element={<SignIn />} />
       <Route path="/signup" element={<SignUp />} />
-      <Route path="/teststartpage" element={<TestStartPage />} />
+      <Route path="/qna" element={<QnaComponent />} />
     </RouteContainer>
   );
 };

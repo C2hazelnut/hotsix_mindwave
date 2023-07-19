@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import { Link } from "react-router-dom";
 
 const Creative = () => {
@@ -23,9 +23,9 @@ const Creative = () => {
                 테스트를 통해 당신이 빠진 심리적 덫의 원인과 해결책을
                 알려드릴게요
               </p>
-                <Link className="btn btn-primary btn-xl" to="/teststartpage">
-                  테스트 시작하기
-                </Link>
+              <Link className="btn btn-primary btn-xl" to="/test">
+                테스트 시작하기
+              </Link>
             </div>
           </div>
         </div>
