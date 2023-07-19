@@ -2,9 +2,13 @@ import React from "react";
 
 const About = () => {
   return (
-    <div>
-      <h1>진단하기 페이지</h1>
-    </div>
+    <header className="masthead">
+      <div>
+          <hr className="sign-divider-light"/>
+          <h2 className="text-center mt-0 text-white text-center">진단하기</h2>
+          <hr className="sign-divider-light"/>
+        </div>
+    </header>
   );
 };
 

@@ -1,47 +1,99 @@
-import React from "react";
+import React, { useState } from 'react';
 
 const SignUp = () => {
-  return (
-    <section id='signup'>
-    <h2 className="text-center mt-0">Sign Up</h2>
-    <hr className="divider" /> <br></br>
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [passwordsMatch, setPasswordsMatch] = useState(true);
+  const [preventSubmit, setPreventSubmit] = useState(true);
 
-    <div class="form-floating mb-3">
-      <input class="form-control" id="name" type="text" placeholder="Enter your name..." data-sb-validations="required" />
-      <label for="name">Full name</label>
-      <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
-    </div>
+  const handlePasswordChange = (event) => {
+    setPassword(event.target.value);
+  };
 
-    <div class="form-floating mb-3">
-      <input class="form-control" id="email" type="email" placeholder="name@example.com" data-sb-validations="required,email" />
-      <label for="email">Email address</label>
-      <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
-      <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
-    </div>
+  const handleConfirmPasswordChange = (event) => {
+    setConfirmPassword(event.target.value);
+  };
 
-    <div class="form-floating mb-3">
-      <input class="form-control" id="phone" type="tel" placeholder="(123) 456-7890" data-sb-validations="required" />
-      <label for="phone">Phone number</label>
-      <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>
-    </div>
+  const handlePasswordFormSubmit = (event) => {
+    
 
-    <div class="form-floating mb-3">
-      <input class="form-control" id="id" type="text" placeholder="Enter your ID..." data-sb-validations="required" />
-      <label for="name">ID</label>
-      <div class="invalid-feedback" data-sb-feedback="name:required">An ID is required.</div>
-    </div>
+    // 비밀번호와 비밀번호 확인이 일치하는지 확인합니다.
+    const passwordsMatch = password === confirmPassword;
 
-    <div class="form-floating mb-3">
-      <input class="form-control" id="password" type="text" placeholder="Enter your Password..." data-sb-validations="required" />
-      <label for="name">Password</label>
-      <div class="invalid-feedback" data-sb-feedback="name:required">A password is required.</div>
-    </div>
+      setPasswordsMatch(passwordsMatch);
+    if (passwordsMatch == true) {
+      event.target.submit();
+    } else {
+      event.preventDefault();
+    }
+  };
 
-   
-    <div class="d-grid"><button id="submitButton" type="submit">Submit</button></div>
-    <p>이미 계정이 있으시다면  <a href="#signin">로그인하기</a> </p>
-  </section>
-  );
+  
+    return (
+      <header className="masthead">
+        <section id="signup">
+          <hr className="sign-divider-light"/>
+          <h2 className="text-center mt-0 text-white">Sign Up</h2>
+          <hr className="sign-divider-light" />
+          <div className="text-center text-white">이미 계정이 있다면&nbsp;<a href="./signin">로그인하기</a></div><br/>
+          
+          <div className="row gx-4 gx-lg-5 justify-content-center mb-5">
+            <div className="col-lg-4">
+              <form id="signup" onSubmit={handlePasswordFormSubmit}>
+                {/* ID input */}
+                <div className="form-floating mb-3">
+                <input className="form-control" id="name" type="text" placeholder="Enter your name..." required/>
+                <label htmlFor="name">Full name</label>
+                <div className="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
+                </div>
+
+                {/* EMAIL input */}
+                <div className="form-floating mb-3">
+                <input className="form-control" id="email" type="email" placeholder="Enter your Email..." required/>
+                <label htmlFor="email">Email address</label>
+                <div className="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
+                <div className="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
+                </div>
+
+                {/* ID input */}
+                <div className="form-floating mb-3">
+                <input className="form-control" id="id" type="text" placeholder="Enter your ID..." required/>
+                <label htmlFor="id">ID</label>
+                <div className="invalid-feedback" data-sb-feedback="id:required">An ID is required.</div>
+                </div>
+
+                {/* PASSWORD input */}
+                <div className="form-floating mb-3">
+                <input className="form-control" id="password" type="password" placeholder="Enter your password..." 
+                       value={password} onChange={handlePasswordChange} required/>
+                <label htmlFor="password">Password</label>
+                <div className="invalid-feedback" data-sb-feedback="password:required">A password is required.</div>
+                </div>
+
+                {/* PASSWORD CONFIRM input */}
+                <div className="form-floating mb-3">
+                <input className="form-control" id="confirmPassword" type="password" placeholder="Enter your password again..." 
+                       value={confirmPassword} onChange={handleConfirmPasswordChange} required/>
+                <label htmlFor="confirmPassword">Password Check</label>
+                <div className="invalid-feedback" data-sb-feedback="confirmPassword:required">A password is required.</div>
+                </div>
+
+                {!passwordsMatch && (
+                  <p className='text-white text-center'>비밀번호와 비밀번호 확인이 일치하지 않습니다.</p>
+                )}
+
+                {/* SUBMIT button */}
+                <div className="d-grid">
+                  <button className="btn btn-primary btn-xl"  id="submitButton" type="submit">Sign Up !</button>
+                </div>
+
+                
+              </form>
+            </div>
+          </div>
+        </section>
+      </header>
+    );
 };
 
 export default SignUp;

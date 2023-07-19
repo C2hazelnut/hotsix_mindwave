@@ -11199,6 +11199,14 @@ hr.divider-light {
   background-color: #fff;
 }
 
+hr.sign-divider-light {
+  height: 0.2rem;
+  max-width: 15rem;
+  margin: 1.5rem auto;
+  background-color: #fff;
+  opacity: 1;
+}
+
 #mainNav {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
   background-color: #fff;
@@ -11390,4 +11398,22 @@ header.masthead .h1 {
 #portfolio .container-xl .portfolio-box:hover .portfolio-box-caption,
 #portfolio .container-xxl .portfolio-box:hover .portfolio-box-caption {
   opacity: 1;
+}
+
+.diary{
+  margin: 20px;
+  padding: 20px;
+  background-color: #282c34;
+  min-height: 100vh;
+  opacity: 0.9;
+  border-radius: 1%;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+textarea{
+  width: 100%;
+  height: 1000px;
+  border: none;
+  resize: none;
 }

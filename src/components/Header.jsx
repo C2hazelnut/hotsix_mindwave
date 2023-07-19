@@ -6,12 +6,11 @@ const Header = () => {
     <>
       <nav
         className="navbar navbar-expand-lg navbar-light fixed-top py-3"
-        id="mainNav"
-      >
+        id="mainNav">
         <div className="container px-4 px-lg-5">
-          <a className="navbar-brand" href="#page-top">
-            마음의 파도
-          </a>
+            <Link className="navbar-brand" to="/">
+              마음의 파도
+            </Link>
           <button
             className="navbar-toggler navbar-toggler-right"
             type="button"
@@ -26,24 +25,24 @@ const Header = () => {
           <div className="collapse navbar-collapse" id="navbarResponsive">
             <ul className="navbar-nav ms-auto my-2 my-lg-0">
               <li className="nav-item">
-                <a className="nav-link" href="#about">
-                  <Link to="/about">진단하기</Link>
-                </a>
+                <Link className="nav-link" to="/about ">
+                  진단하기
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#services">
-                  <Link to="/services">마음일지</Link>
-                </a>
+                <Link className="nav-link" to="/services">
+                  마음일지
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#portfolio">
-                  <Link to="/signin">로그인</Link>
-                </a>
+                <Link className="nav-link" to="/signin">
+                  로그인
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#contact">
-                  <Link to="/signup">회원가입</Link>
-                </a>
+                <Link className="nav-link" to="/signup">
+                  회원가입
+                </Link>
               </li>
             </ul>
           </div>
