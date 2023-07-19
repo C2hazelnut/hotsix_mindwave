@@ -28,12 +28,10 @@
   animation-duration: 0.5s;
 }
 body{
-  background-color: pink;
+  background-color: white;
 }
 
-*{
-  font-family: 'Nanum Pen Script', cursive;
-}
+
 #main{
   background-color: whitesmoke;
   width: 80%;
