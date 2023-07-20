@@ -1,45 +1,60 @@
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes fadeOut {
-  from { opacity: 1; }
-  to { opacity: 0; }
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }
 
 @-webkit-keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @-webkit-keyframes fadeOut {
-  from { opacity: 1; }
-  to { opacity: 0; }
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }
 
-.fadeIn{
+.fadeIn {
   animation: fadeIn;
   animation-duration: 0.5s;
 }
 
-.fadeOut{
+.fadeOut {
   animation: fadeOut;
   animation-duration: 0.5s;
 }
-body{
+body {
   background-color: white;
 }
 
-
-#main{
+#main {
   background-color: whitesmoke;
   width: 80%;
   text-align: center;
   border-radius: 20px;
 }
 
-p{
+p {
   font-size: 20px;
 }
 
@@ -52,19 +67,22 @@ p{
   text-align: center;
   border-radius: 20px;
   font-size: 24px;
-  width: 80%
+  width: 80%;
 }
 
 .answerList {
   background-color: whitesmoke;
-  border-radius: 20px;
-  display: block;
-  width: 80%;
+  border-radius: 50%; /* 버튼을 동그랗게 만들기 위해 수정함 */
+  display: inline-block; /* 가로로 나열하기 위해 수정함 */
+  width: 80px; /* 버튼의 너비를 설정함 (원하는 크기로 조절) */
+  height: 80px; /* 버튼의 높이를 설정함 (원하는 크기로 조절) */
   border: 0px;
   font-size: 20px;
+  margin: 20%; /* 버튼 사이의 간격을 설정함 (원하는 크기로 조절) */
 }
 
-.answerList:hover, .answerList:focus {
+.answerList:hover,
+.answerList:focus {
   background-color: pink;
   color: whitesmoke;
 }
@@ -84,7 +102,12 @@ p{
   /* Old browsers */
   background: -moz-linear-gradient(top, #febbbb 0%, #fe9090 52%, #ff5c5c 100%);
   /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, #febbbb 0%, #fe9090 52%, #ff5c5c 100%);
+  background: -webkit-linear-gradient(
+    top,
+    #febbbb 0%,
+    #fe9090 52%,
+    #ff5c5c 100%
+  );
   /* Chrome10-25,Safari5.1-6 */
   background: linear-gradient(to bottom, #febbbb 0%, #fe9090 52%, #ff5c5c 100%);
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
@@ -92,7 +115,7 @@ p{
   /* IE6-9 */
 }
 
-#result{
+#result {
   display: none;
   background-color: whitesmoke;
   width: 80%;
@@ -100,23 +123,24 @@ p{
   border-radius: 20px;
 }
 
-.resultname{
+.resultname {
   font-size: 26px;
 }
 
-.resultDesc{
+.resultDesc {
   font-size: 20px;
 }
 
-.kakao{
+.kakao {
   color: white;
-  background-color: #FEE500;
+  background-color: #fee500;
   font-size: 20px;
   border: 0px;
   border-radius: 20px;
 }
 
-.kakao:hover, .kakao:focus {
+.kakao:hover,
+.kakao:focus {
   background-color: whitesmoke;
-  color: #FEE500;
+  color: #fee500;
 }
