@@ -1,17 +1,17 @@
 .c-grid{
     display: grid;
-    justify-content: center;
-    align-items: center;
+    /*justify-content: center;
+    align-items: center;*/
 }
 p{
-  color: white;
+  color: black;
 }
 .react-calendar {
+  margin:10px;
   width: 350px;
   max-width: 100%;
-  background: white;
-  border: 1px solid #a0a096;
-  font-family: Arial, Helvetica, sans-serif;
+  /*border: none;*/
+  font-family: "Gowun Batang", serif;
   line-height: 1.125em;
 }
 
@@ -149,8 +149,9 @@ p{
 .react-calendar--selectRange .react-calendar__tile--hover {
   background-color: #e6e6e6;
 }
+/*여기까지 달력*/
 
-
+/*
 .left-sidebar {
     width: 200px; 
     height: 100vh; 
@@ -158,6 +159,10 @@ p{
     color: #fff; 
   }
   
+  .left-area{
+    font-size: calc(10px + 2vmin);
+  }
+
   .sidebar-menu {
     list-style: none; 
     padding: 0;
@@ -171,24 +176,34 @@ p{
   .sidebar-menu li.active {
     background-color: #555;
   }
+*/
+.s-grid{
+  background-color: white;
+}
+
+input{
+  justify-content: center;
+  align-items: center;
+  display: grid;
+  /*border: none;*/
+  width:100%;
+}
 
 textarea{
-    height: 1000px;
+    display: flex;
+    height: 500px;
+    width: 100%;
     background-color: white;
-    border: none;
+    /*border: none;*/
     resize: none;
-  }
-  
-  .left-area{
-    font-size: calc(10px + 2vmin);
   }
 
   .diary{
     margin: 20px;
     padding: 20px;
-    background-color: whitesmoke;
-    min-height: 100vh;
-    opacity: 0.8;
+    background-color: none;
+    min-height: 60vh;
     font-size: calc(10px + 2vmin);
-    color: white;
+    color: black;
+    opacity: 0.9;
   }
