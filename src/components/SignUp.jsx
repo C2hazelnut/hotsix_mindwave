@@ -4,8 +4,7 @@ const SignUp = () => {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [passwordsMatch, setPasswordsMatch] = useState(true);
-  const [preventSubmit, setPreventSubmit] = useState(true);
-
+  
   const handlePasswordChange = (event) => {
     setPassword(event.target.value);
   };
