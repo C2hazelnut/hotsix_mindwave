@@ -296,10 +296,141 @@ const infoList = [
   },
 ];
 
+// const QnaComponent = () => {
+//   const endPoint = 22;
+//   const [select, setSelect] = useState(Array(endPoint).fill(0));
+//   const [qIdx, setQIdx] = useState(0);
+
+//   const calResult = () => {
+//     console.log("final select:", select);
+//     const max = Math.max(...select);
+//     const result = select.reduce((acc, cur, idx) => {
+//       if (cur === max) acc.push(idx);
+//       return acc;
+//     }, []);
+//     console.log("result", result);
+//     return result;
+//   };
+
+//   const setResult = () => {
+//     const point = calResult();
+//     const resultName = document.querySelector(".resultname");
+//     resultName.innerHTML = infoList[point].name;
+
+//     const resultImg = document.createElement("img");
+//     const imgDiv = document.querySelector("#resultImg");
+//     const imgURL = `img/image-${point}.png`;
+//     resultImg.src = imgURL;
+//     resultImg.alt = point;
+//     resultImg.classList.add("img-fluid");
+//     imgDiv.appendChild(resultImg);
+
+//     const resultDesc = document.querySelector(".resultDesc");
+//     resultDesc.innerHTML = infoList[point].desc;
+//   };
+
+//   const goResult = () => {
+//     const qna = document.querySelector("#qna");
+//     const result = document.querySelector("#result");
+
+//     qna.style.WebkitAnimation = "fadeOut 1s";
+//     qna.style.animation = "fadeOut 1s";
+
+//     setTimeout(() => {
+//       result.style.WebkitAnimation = "fadeIn 1s";
+//       result.style.animation = "fadeIn 1s";
+
+//       setTimeout(() => {
+//         qna.style.display = "none";
+//         result.style.display = "block";
+//       }, 450);
+//       setResult();
+//     }, 450);
+//   };
+
+//   const addAnswer = (answerText, qIdx, idx) => {
+//     const answerClickHandler = () => {
+//       const target = qnaList[qIdx].a[idx].type;
+//       const updatedSelect = [...select];
+//       if (target !== null) {
+//         for (let i = 0; i < target.length; i++) {
+//           updatedSelect[target[i]] += 1;
+//         }
+//       }
+//       setSelect(updatedSelect);
+//       console.log("Updated Select:", updatedSelect);
+//       goNext(qIdx + 1);
+//     };
+
+//     return (
+//       <button
+//         className="answerList my-3 py-3 mx-auto fadeIn"
+//         onClick={answerClickHandler}
+//       >
+//         {answerText}
+//       </button>
+//     );
+//   };
+
+//   const goNext = (qIdx) => {
+//     if (qIdx === endPoint) {
+//       goResult();
+//       return;
+//     }
+
+//     const q = document.querySelector(".qBox");
+//     q.innerHTML = qnaList[qIdx].q;
+
+//     // Use map to render each answer with the AnswerComponent
+//     const answers = qnaList[qIdx].a.map((answer, idx) => (
+//       <AnswerComponent
+//         key={idx}
+//         answerText={answer.answer}
+//         qIdx={qIdx}
+//         idx={idx}
+//       />
+//     ));
+
+//      const rootElement = document.querySelector(".answerBox");
+//     const root = createRoot(rootElement);
+//     root.render(answers);
+
+//     const status = document.querySelector(".statusBar");
+//     status.style.width = `${(100 / endPoint) * (qIdx + 1)}%`;
+
+//     setQIdx(qIdx);
+//   };
+
+//   const AnswerComponent = ({ answerText, qIdx, idx }) => {
+//     return addAnswer(answerText, qIdx, idx);
+//   };
+
+//   const begin = () => {
+//     const main = document.querySelector("#main");
+//     const qna = document.querySelector("#qna");
+
+//     main.style.WebkitAnimation = "fadeOut 1s";
+//     main.style.animation = "fadeOut 1s";
+
+//     setTimeout(() => {
+//       qna.style.WebkitAnimation = "fadeIn 1s";
+//       qna.style.animation = "fadeIn 1s";
+
+//       setTimeout(() => {
+//         main.style.display = "none";
+//         qna.style.display = "block";
+//       }, 450);
+
+//       goNext(0);
+//     }, 450);
+//   };
+
 const QnaComponent = () => {
   const endPoint = 22;
   const [select, setSelect] = useState(Array(endPoint).fill(0));
   const [qIdx, setQIdx] = useState(0);
+  const [question, setQuestion] = useState(null);
+  const [answers, setAnswers] = useState([]);
 
   const calResult = () => {
     console.log("final select:", select);
@@ -312,22 +443,80 @@ const QnaComponent = () => {
     return result;
   };
 
-  const setResult = () => {
-    const point = calResult();
-    const resultName = document.querySelector(".resultname");
-    resultName.innerHTML = infoList[point].name;
+    const setResult = () => {
+      const points = calResult();
+      const resultContainer = document.querySelector("#result");
+      resultContainer.innerHTML = ""; // 기존 결과를 비웁니다.
 
-    const resultImg = document.createElement("img");
-    const imgDiv = document.querySelector("#resultImg");
-    const imgURL = `img/image-${point}.png`;
-    resultImg.src = imgURL;
-    resultImg.alt = point;
-    resultImg.classList.add("img-fluid");
-    imgDiv.appendChild(resultImg);
+      points.forEach((point) => {
+        if (infoList[point]) {
+          const resultSection = document.createElement("div");
 
-    const resultDesc = document.querySelector(".resultDesc");
-    resultDesc.innerHTML = infoList[point].desc;
-  };
+          const resultName = document.createElement("h3");
+          resultName.innerHTML = infoList[point].name;
+          resultSection.appendChild(resultName);
+
+          const resultImg = document.createElement("img");
+          const imgURL = `img/image-${point}.png`;
+          resultImg.src = imgURL;
+          resultImg.alt = point;
+          resultImg.classList.add("img-fluid");
+          resultSection.appendChild(resultImg);
+
+          const resultDesc = document.createElement("p");
+          resultDesc.innerHTML = infoList[point].desc;
+          resultSection.appendChild(resultDesc);
+
+          resultContainer.appendChild(resultSection);
+        } else {
+          // 적절한 오류 처리
+          const errorMessage = document.createElement("p");
+          errorMessage.innerHTML = "알 수 없는 결과";
+          resultContainer.appendChild(errorMessage);
+        }
+      });
+    };
+
+
+//   const setResult = () => {
+//     const point = calResult()[0];
+//     const resultName = document.querySelector(".resultname");
+
+//     if (infoList[point]) {
+//       resultName.innerHTML = infoList[point].name;
+
+//       const resultImg = document.createElement("img");
+//       const imgDiv = document.querySelector("#resultImg");
+//       const imgURL = `img/image-${point}.png`;
+//       resultImg.src = imgURL;
+//       resultImg.alt = point;
+//       resultImg.classList.add("img-fluid");
+//       imgDiv.appendChild(resultImg);
+
+//       const resultDesc = document.querySelector(".resultDesc");
+//       resultDesc.innerHTML = infoList[point].desc;
+//     } else {
+//       // 적절한 오류 처리
+//       resultName.innerHTML = "알 수 없는 결과";
+//     }
+//   };
+
+  //   const setResult = ()[0] => {
+  //     const point = calResult();
+  //     const resultName = document.querySelector(".resultname");
+  //     resultName.innerHTML = infoList[point].name;
+
+  //     const resultImg = document.createElement("img");
+  //     const imgDiv = document.querySelector("#resultImg");
+  //     const imgURL = `img/image-${point}.png`;
+  //     resultImg.src = imgURL;
+  //     resultImg.alt = point;
+  //     resultImg.classList.add("img-fluid");
+  //     imgDiv.appendChild(resultImg);
+
+  //     const resultDesc = document.querySelector(".resultDesc");
+  //     resultDesc.innerHTML = infoList[point].desc;
+  //   };
 
   const goResult = () => {
     const qna = document.querySelector("#qna");
@@ -348,8 +537,24 @@ const QnaComponent = () => {
     }, 450);
   };
 
+  useEffect(() => {
+    if (qIdx === endPoint) {
+      goResult();
+    } else {
+      const q = qnaList[qIdx].q;
+      const answerElements = qnaList[qIdx].a.map((answer, idx) =>
+        addAnswer(answer.answer, qIdx, idx)
+      );
+
+      setQuestion(q);
+      setAnswers(answerElements);
+      const status = document.querySelector(".statusBar");
+      status.style.width = `${(100 / endPoint) * (qIdx + 1)}%`;
+    }
+  }, [qIdx]);
+
   const addAnswer = (answerText, qIdx, idx) => {
-    const answerClickHandler = () => {
+    const handleClick = () => {
       const target = qnaList[qIdx].a[idx].type;
       const updatedSelect = [...select];
       if (target !== null) {
@@ -359,13 +564,15 @@ const QnaComponent = () => {
       }
       setSelect(updatedSelect);
       console.log("Updated Select:", updatedSelect);
+
       goNext(qIdx + 1);
     };
 
     return (
       <button
+        key={idx}
         className="answerList my-3 py-3 mx-auto fadeIn"
-        onClick={answerClickHandler}
+        onClick={handleClick}
       >
         {answerText}
       </button>
@@ -380,30 +587,74 @@ const QnaComponent = () => {
 
     const q = document.querySelector(".qBox");
     q.innerHTML = qnaList[qIdx].q;
-
-    // Use map to render each answer with the AnswerComponent
-    const answers = qnaList[qIdx].a.map((answer, idx) => (
-      <AnswerComponent
-        key={idx}
-        answerText={answer.answer}
-        qIdx={qIdx}
-        idx={idx}
-      />
-    ));
-
-     const rootElement = document.querySelector(".answerBox");
-    const root = createRoot(rootElement);
-    root.render(answers);
+    const answerElements = qnaList[qIdx].a.map((answer, idx) =>
+      addAnswer(answer.answer, qIdx, idx)
+    );
 
     const status = document.querySelector(".statusBar");
     status.style.width = `${(100 / endPoint) * (qIdx + 1)}%`;
 
     setQIdx(qIdx);
+    return answerElements;
   };
 
-  const AnswerComponent = ({ answerText, qIdx, idx }) => {
-    return addAnswer(answerText, qIdx, idx);
-  };
+  // const addAnswer = (answerText, qIdx, idx) => {
+  //   const a = document.querySelector(".answerBox");
+  //   const answer = document.createElement("button");
+  //   answer.classList.add("answerList");
+  //   answer.classList.add("my-3");
+  //   answer.classList.add("py-3");
+  //   answer.classList.add("mx-auto");
+  //   answer.classList.add("fadeIn");
+
+  //   a.appendChild(answer);
+  //   answer.innerHTML = answerText;
+
+  //   answer.addEventListener(
+  //     "click",
+  //     () => {
+  //       const children = document.querySelectorAll(".answerList");
+  //       for (let i = 0; i < children.length; i++) {
+  //         children[i].disabled = true;
+  //         children[i].style.WebkitAnimation = "fadeOut 0.5s";
+  //         children[i].style.animation = "fadeOut 0.5s";
+  //       }
+  //       setTimeout(() => {
+  //         const target = qnaList[qIdx].a[idx].type;
+  //         const updatedSelect = [...select];
+  //         if (target !== null) {
+  //           for (let i = 0; i < target.length; i++) {
+  //             updatedSelect[target[i]] += 1;
+  //           }
+  //         }
+  //         setSelect(updatedSelect);
+  //         console.log("Updated Select:", updatedSelect);
+  //         for (let i = 0; i < children.length; i++) {
+  //           children[i].style.display = "none";
+  //         }
+  //         goNext(qIdx + 1);
+  //       }, 450);
+  //     },
+  //     false
+  //   );
+  // };
+
+  // const goNext = (qIdx) => {
+  //   if (qIdx === endPoint) {
+  //     goResult();
+  //     return;
+  //   }
+
+  //   const q = document.querySelector(".qBox");
+  //   q.innerHTML = qnaList[qIdx].q;
+  //   for (let i in qnaList[qIdx].a) {
+  //     addAnswer(qnaList[qIdx].a[i].answer, qIdx, i);
+  //   }
+  //   const status = document.querySelector(".statusBar");
+  //   status.style.width = `${(100 / endPoint) * (qIdx + 1)}%`;
+
+  //   setQIdx(qIdx);
+  // };
 
   const begin = () => {
     const main = document.querySelector("#main");
@@ -424,166 +675,6 @@ const QnaComponent = () => {
       goNext(0);
     }, 450);
   };
-
-  // const QnaComponent = () => {
-  //   const endPoint = 22;
-  //   const [select, setSelect] = useState(Array(endPoint).fill(0));
-  //   const [qIdx, setQIdx] = useState(0);
-
-  //   const calResult = () => {
-  //     console.log("final select:", select);
-  //     const max = Math.max(...select);
-  //     const result = select.reduce((acc, cur, idx) => {
-  //       if (cur === max) acc.push(idx);
-  //       return acc;
-  //     }, []);
-  //     console.log("result", result);
-  //     return result;
-  //   };
-
-  //   //   const calResult = () => {
-  //   //     console.log("final select:" ,select);
-  //   //     const result = select.indexOf(Math.max(...select));
-  //   //       return result;
-  //   //   };
-
-  //   const setResult = () => {
-  //     const point = calResult();
-  //     const resultName = document.querySelector(".resultname");
-  //     resultName.innerHTML = infoList[point].name;
-
-  //     const resultImg = document.createElement("img");
-  //     const imgDiv = document.querySelector("#resultImg");
-  //     const imgURL = `img/image-${point}.png`;
-  //     resultImg.src = imgURL;
-  //     resultImg.alt = point;
-  //     resultImg.classList.add("img-fluid");
-  //     imgDiv.appendChild(resultImg);
-
-  //     const resultDesc = document.querySelector(".resultDesc");
-  //     resultDesc.innerHTML = infoList[point].desc;
-  //   };
-
-  //   const goResult = () => {
-  //     const qna = document.querySelector("#qna");
-  //     const result = document.querySelector("#result");
-
-  //     qna.style.WebkitAnimation = "fadeOut 1s";
-  //     qna.style.animation = "fadeOut 1s";
-
-  //     setTimeout(() => {
-  //       result.style.WebkitAnimation = "fadeIn 1s";
-  //       result.style.animation = "fadeIn 1s";
-
-  //       setTimeout(() => {
-  //         qna.style.display = "none";
-  //         result.style.display = "block";
-  //       }, 450);
-  //       setResult();
-  //     }, 450);
-  //     };
-
-  // const addAnswer = (answerText, qIdx, idx) => {
-  //   const answerClickHandler = () => {
-  //     const target = qnaList[qIdx].a[idx].type;
-  //     const updatedSelect = [...select];
-  //     if (target !== null) {
-  //       for (let i = 0; i < target.length; i++) {
-  //         updatedSelect[target[i]] += 1;
-  //       }
-  //     }
-  //     setSelect(updatedSelect);
-  //     console.log("Updated Select:", updatedSelect);
-  //     goNext(qIdx + 1);
-  //   };
-
-  //   return (
-  //     <button
-  //       className="answerList my-3 py-3 mx-auto fadeIn"
-  //       onClick={answerClickHandler}
-  //     >
-  //       {answerText}
-  //     </button>
-  //   );
-  // };
-
-  // //   const addAnswer = (answerText, qIdx, idx) => {
-  // //     const a = document.querySelector(".answerBox");
-  // //     const answer = document.createElement("button");
-  // //     answer.classList.add("answerList");
-  // //     answer.classList.add("my-3");
-  // //     answer.classList.add("py-3");
-  // //     answer.classList.add("mx-auto");
-  // //     answer.classList.add("fadeIn");
-
-  // //     a.appendChild(answer);
-  // //     answer.innerHTML = answerText;
-
-  // //     answer.addEventListener(
-  // //       "click",
-  // //       () => {
-  // //         const children = document.querySelectorAll(".answerList");
-  // //         for (let i = 0; i < children.length; i++) {
-  // //           children[i].disabled = true;
-  // //           children[i].style.WebkitAnimation = "fadeOut 0.5s";
-  // //           children[i].style.animation = "fadeOut 0.5s";
-  // //         }
-  // //         setTimeout(() => {
-  // //           const target = qnaList[qIdx].a[idx].type;
-  // //           const updatedSelect = [...select];
-  // //           if (target !== null) {
-  // //             for (let i = 0; i < target.length; i++) {
-  // //               updatedSelect[target[i]] += 1;
-  // //             }
-  // //           }
-  // //           setSelect(updatedSelect);
-  // //           console.log("Updated Select:", updatedSelect);
-  // //           for (let i = 0; i < children.length; i++) {
-  // //             children[i].style.display = "none";
-  // //           }
-  // //           goNext(qIdx + 1);
-  // //         }, 450);
-  // //       },
-  // //       false
-  // //     );
-  // //   };
-
-  //   const goNext = (qIdx) => {
-  //     if (qIdx === endPoint) {
-  //       goResult();
-  //       return;
-  //     }
-
-  //     const q = document.querySelector(".qBox");
-  //     q.innerHTML = qnaList[qIdx].q;
-  //     for (let i in qnaList[qIdx].a) {
-  //       addAnswer(qnaList[qIdx].a[i].answer, qIdx, i);
-  //     }
-  //     const status = document.querySelector(".statusBar");
-  //     status.style.width = `${(100 / endPoint) * (qIdx + 1)}%`;
-
-  //     setQIdx(qIdx);
-  //   };
-
-  //   const begin = () => {
-  //     const main = document.querySelector("#main");
-  //     const qna = document.querySelector("#qna");
-
-  //     main.style.WebkitAnimation = "fadeOut 1s";
-  //     main.style.animation = "fadeOut 1s";
-
-  //     setTimeout(() => {
-  //       qna.style.WebkitAnimation = "fadeIn 1s";
-  //       qna.style.animation = "fadeIn 1s";
-
-  //       setTimeout(() => {
-  //         main.style.display = "none";
-  //         qna.style.display = "block";
-  //       }, 450);
-
-  //       goNext(0);
-  //     }, 450);
-  //   };
 
   return (
     <div className="container">
@@ -608,8 +699,8 @@ const QnaComponent = () => {
         <div className="status mx-auto mt-5">
           <div className="statusBar"></div>
         </div>
-        <div className="qBox my-5 py-3 mx-auto"></div>
-        <div className="answerBox"></div>
+        <div className="qBox my-5 py-3 mx-auto">{question}</div>
+        <div className="answerBox">{answers}</div>
       </section>
       <section id="result" className="mx-auto my-5 py-5 px-3">
         <h1>당신의 결과는?!</h1>
