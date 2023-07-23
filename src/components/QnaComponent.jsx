@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 import ReactDOM, { createRoot } from "react-dom/client";
+import image from "../asset/body.png"
 
 import "./teststyle.css";
 
 const qnaList = [
   {
-    q: "1. 이성 사이에 진정한 친구는 있다, 없다?",
+    q: "1.날 떠나버릴지도 모른다는 두려움에 사람들에게 매달린다.",
     a: [
       { answer: "1", type: null },
       { answer: "2", type: null },
@@ -443,63 +444,62 @@ const QnaComponent = () => {
     return result;
   };
 
-    const setResult = () => {
-      const points = calResult();
-      const resultContainer = document.querySelector("#result");
-      resultContainer.innerHTML = ""; // 기존 결과를 비웁니다.
+  const setResult = () => {
+    const points = calResult();
+    const resultContainer = document.querySelector("#result");
+    resultContainer.innerHTML = ""; // 기존 결과를 비웁니다.
 
-      points.forEach((point) => {
-        if (infoList[point]) {
-          const resultSection = document.createElement("div");
+    points.forEach((point) => {
+      if (infoList[point]) {
+        const resultSection = document.createElement("div");
 
-          const resultName = document.createElement("h3");
-          resultName.innerHTML = infoList[point].name;
-          resultSection.appendChild(resultName);
+        const resultName = document.createElement("h3");
+        resultName.innerHTML = infoList[point].name;
+        resultSection.appendChild(resultName);
 
-          const resultImg = document.createElement("img");
-          const imgURL = `img/image-${point}.png`;
-          resultImg.src = imgURL;
-          resultImg.alt = point;
-          resultImg.classList.add("img-fluid");
-          resultSection.appendChild(resultImg);
+        const resultImg = document.createElement("img");
+        const imgURL = `img/image-${point}.png`;
+        resultImg.src = imgURL;
+        resultImg.alt = point;
+        resultImg.classList.add("img-fluid");
+        resultSection.appendChild(resultImg);
 
-          const resultDesc = document.createElement("p");
-          resultDesc.innerHTML = infoList[point].desc;
-          resultSection.appendChild(resultDesc);
+        const resultDesc = document.createElement("p");
+        resultDesc.innerHTML = infoList[point].desc;
+        resultSection.appendChild(resultDesc);
 
-          resultContainer.appendChild(resultSection);
-        } else {
-          // 적절한 오류 처리
-          const errorMessage = document.createElement("p");
-          errorMessage.innerHTML = "알 수 없는 결과";
-          resultContainer.appendChild(errorMessage);
-        }
-      });
-    };
+        resultContainer.appendChild(resultSection);
+      } else {
+        // 적절한 오류 처리
+        const errorMessage = document.createElement("p");
+        errorMessage.innerHTML = "알 수 없는 결과";
+        resultContainer.appendChild(errorMessage);
+      }
+    });
+  };
 
+  //   const setResult = () => {
+  //     const point = calResult()[0];
+  //     const resultName = document.querySelector(".resultname");
 
-//   const setResult = () => {
-//     const point = calResult()[0];
-//     const resultName = document.querySelector(".resultname");
+  //     if (infoList[point]) {
+  //       resultName.innerHTML = infoList[point].name;
 
-//     if (infoList[point]) {
-//       resultName.innerHTML = infoList[point].name;
+  //       const resultImg = document.createElement("img");
+  //       const imgDiv = document.querySelector("#resultImg");
+  //       const imgURL = `img/image-${point}.png`;
+  //       resultImg.src = imgURL;
+  //       resultImg.alt = point;
+  //       resultImg.classList.add("img-fluid");
+  //       imgDiv.appendChild(resultImg);
 
-//       const resultImg = document.createElement("img");
-//       const imgDiv = document.querySelector("#resultImg");
-//       const imgURL = `img/image-${point}.png`;
-//       resultImg.src = imgURL;
-//       resultImg.alt = point;
-//       resultImg.classList.add("img-fluid");
-//       imgDiv.appendChild(resultImg);
-
-//       const resultDesc = document.querySelector(".resultDesc");
-//       resultDesc.innerHTML = infoList[point].desc;
-//     } else {
-//       // 적절한 오류 처리
-//       resultName.innerHTML = "알 수 없는 결과";
-//     }
-//   };
+  //       const resultDesc = document.querySelector(".resultDesc");
+  //       resultDesc.innerHTML = infoList[point].desc;
+  //     } else {
+  //       // 적절한 오류 처리
+  //       resultName.innerHTML = "알 수 없는 결과";
+  //     }
+  //   };
 
   //   const setResult = ()[0] => {
   //     const point = calResult();
@@ -676,50 +676,56 @@ const QnaComponent = () => {
     }, 450);
   };
 
-  return (
-    <div className="container">
-      <section id="main" className="mx-auto my-5 py-5 px-3">
-        <h1>마음의 덫 찾기</h1>
-        <div className="col-lg-6 col-md-8 col-sm-10 col-12 mx-auto">
-          <img src="./img/main.png" alt="mainImage" className="img-fluid" />
+    return (
+      <header className="masthead">
+        <div className="container">
+          <section id="main" className="mx-auto my-5 py-5 px-3">
+            <h1>마음의 덫 찾기</h1>
+            <div className="col-lg-6 col-md-8 col-sm-10 col-12 mx-auto">
+              <img
+                src="../asset/body.png"
+                alt="mainImage"
+                className="img-fluid"
+              />
+            </div>
+            <p>
+              나만의 MBTI 사이트입니다! <br />
+              아래 시작하기 버튼을 눌러 시작해 주십시오.
+            </p>
+            <button
+              type="button"
+              className="btn btn-outline-danger mt-3"
+              onClick={begin}
+            >
+              시작하기
+            </button>
+          </section>
+          <section id="qna">
+            <div className="status mx-auto mt-5">
+              <div className="statusBar"></div>
+            </div>
+            <div className="qBox my-5 py-3 mx-auto">{question}</div>
+            <div className="answerBox">{answers}</div>
+          </section>
+          <section id="result" className="mx-auto my-5 py-5 px-3">
+            <h1>당신의 결과는?!</h1>
+            <div className="resultname"></div>
+            <div
+              id="resultImg"
+              className="my-3 col-lg-6 col-md-8 col-sm-10 col-12 mx-auto"
+            ></div>
+            <div className="resultDesc"></div>
+            <button
+              type="button"
+              className="kakao mt-3 py-2 px-3"
+              //   onClick={/* Your share function */ }
+            >
+              공유하기
+            </button>
+          </section>
         </div>
-        <p>
-          나만의 MBTI 사이트입니다! <br />
-          아래 시작하기 버튼을 눌러 시작해 주십시오.
-        </p>
-        <button
-          type="button"
-          className="btn btn-outline-danger mt-3"
-          onClick={begin}
-        >
-          시작하기
-        </button>
-      </section>
-      <section id="qna">
-        <div className="status mx-auto mt-5">
-          <div className="statusBar"></div>
-        </div>
-        <div className="qBox my-5 py-3 mx-auto">{question}</div>
-        <div className="answerBox">{answers}</div>
-      </section>
-      <section id="result" className="mx-auto my-5 py-5 px-3">
-        <h1>당신의 결과는?!</h1>
-        <div className="resultname"></div>
-        <div
-          id="resultImg"
-          className="my-3 col-lg-6 col-md-8 col-sm-10 col-12 mx-auto"
-        ></div>
-        <div className="resultDesc"></div>
-        <button
-          type="button"
-          className="kakao mt-3 py-2 px-3"
-          //   onClick={/* Your share function */ }
-        >
-          공유하기
-        </button>
-      </section>
-    </div>
-  );
+      </header>
+    );
 };
 
 export default QnaComponent;
