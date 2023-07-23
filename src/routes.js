@@ -7,7 +7,7 @@ import SignUp from "./components/SignUp";
 import Creative from "./components/Creative";
 // import Test from "./components/Test";
 import QnaComponent from "./components/QnaComponent";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 const AppRoutes = () => {
   return (
