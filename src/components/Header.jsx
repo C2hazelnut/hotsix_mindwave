@@ -25,7 +25,7 @@ const Header = () => {
           <div className="collapse navbar-collapse" id="navbarResponsive">
             <ul className="navbar-nav ms-auto my-2 my-lg-0">
               <li className="nav-item">
-                <Link className="nav-link" to="/about ">
+                <Link className="nav-link" to="/qna ">
                   진단하기
                 </Link>
               </li>
