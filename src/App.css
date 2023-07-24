@@ -11174,6 +11174,15 @@ body {
   padding: 8rem 0;
 }
 
+.qna-section {
+  padding: 2rem 0;
+}
+
+
+.transparent-background {
+  background-color: rgba( 255, 255, 255, 0.5 );
+}
+
 .text-white-75 {
   color: rgba(255, 255, 255, 0.75) !important;
 }
@@ -11203,6 +11212,16 @@ hr.sign-divider-light {
   height: 0.2rem;
   max-width: 15rem;
   margin: 1.5rem auto;
+  color: #fff;
+  background-color: #fff;
+  opacity: 1;
+}
+
+hr.qna-divider-light {
+  height: 0.15rem;
+  max-width: 30rem;
+  margin: 1.5rem auto;
+  color: #fff;
   background-color: #fff;
   opacity: 1;
 }
