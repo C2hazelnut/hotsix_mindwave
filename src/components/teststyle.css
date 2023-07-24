@@ -62,56 +62,66 @@ p {
   display: none;
 }
 
+.mbutton {
+  margin-left: 1rem !important;
+  margin-right: 1rem !important;
+}
+
 .qBox {
-  background-color: whitesmoke;
-  text-align: center;
+  /* background-color: whitesmoke; */
+  color : white;
+  background-color: rgba( 0, 0, 0, 0.35 );
   border-radius: 20px;
   font-size: 24px;
-  width: 80%;
+  width: 100%;
+  height: 100%;
+  
 }
 
 .answerList {
-  background-color: whitesmoke;
+  background-color: white;
   border-radius: 50%; /* 버튼을 동그랗게 만들기 위해 수정함 */
   display: inline-block; /* 가로로 나열하기 위해 수정함 */
-  width: 80px; /* 버튼의 너비를 설정함 (원하는 크기로 조절) */
-  height: 80px; /* 버튼의 높이를 설정함 (원하는 크기로 조절) */
+  width: 60px; /* 버튼의 너비를 설정함 (원하는 크기로 조절) */
+  height: 60px; /* 버튼의 높이를 설정함 (원하는 크기로 조절) */
   border: 0px;
   font-size: 20px;
-  margin: 20%; /* 버튼 사이의 간격을 설정함 (원하는 크기로 조절) */
+  margin : 100%;
 }
 
 .answerList:hover,
 .answerList:focus {
-  background-color: pink;
-  color: whitesmoke;
+  background-color: #b7b4ff ;
+  color: white;
+  margin: 20%;
 }
 
 .status {
   height: 20px;
-  width: 80%;
-  background-color: white;
+  width: 50%;
+  background-color: #BDBDBD;
   border-radius: 20px;
+  
 }
 
 .statusBar {
   height: 100%;
   border-radius: 20px;
-  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#febbbb+0,fe9090+52,ff5c5c+100;Red+3D+%231 */
-  background: #febbbb;
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#b7b4ff+0,fe9090+52,ff5c5c+100;Red+3D+%231 */
+  background: #b7b4ff;
   /* Old browsers */
-  background: -moz-linear-gradient(top, #febbbb 0%, #fe9090 52%, #ff5c5c 100%);
+  background: -moz-linear-gradient(top, #b7b4ff 0%, #6f6cd2 52%, #27248a 100%);
   /* FF3.6-15 */
   background: -webkit-linear-gradient(
     top,
-    #febbbb 0%,
-    #fe9090 52%,
-    #ff5c5c 100%
+    #b7b4ff 0%,
+    #6f6cd2 52%,
+    #27248a 100%
   );
   /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, #febbbb 0%, #fe9090 52%, #ff5c5c 100%);
+  background: linear-gradient(to bottom, #b7b4ff 0%, #6f6cd2 52%, #27248a 100%);
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#febbbb', endColorstr='#ff5c5c', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#b7b4ff', endColorstr='#27248a', GradientType=0);
   /* IE6-9 */
 }
 
