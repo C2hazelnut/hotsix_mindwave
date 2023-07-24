@@ -183,7 +183,7 @@ const qnaList = [
     ],
   },
   {
-    q: "17. 나는 다른 사람들이 원하는 대로 해줄수밖에 없다. 그렇게 하지 않으면 사람들은 나에게 어떤 방식으로든 보복하거나 나를 거부할것이다. ",
+    q: "17. 다른 사람들이 원하는 걸 내가 해주지 않으면 사람들은 나에게 어떤 방식으로든 보복하거나 나를 거부할 것이다.",
     a: [
       { answer: "1", type: null },
       { answer: "2", type: null },
@@ -571,7 +571,7 @@ const QnaComponent = () => {
     return (
       <button
         key={idx}
-        className="answerList my-3 py-3 mx-auto fadeIn"
+        className="answerList my-3 py-3 mbutton mx-auto fadeIn"
         onClick={handleClick}
       >
         {answerText}
@@ -678,51 +678,53 @@ const QnaComponent = () => {
 
     return (
       <header className="masthead">
-        <div className="container">
-          <section id="main" className="mx-auto my-5 py-5 px-3">
-            <h1>마음의 덫 찾기</h1>
-            <div className="col-lg-6 col-md-8 col-sm-10 col-12 mx-auto">
-              <img
-                src="../asset/body.png"
-                alt="mainImage"
-                className="img-fluid"
-              />
-            </div>
-            <p>
-              나만의 MBTI 사이트입니다! <br />
-              아래 시작하기 버튼을 눌러 시작해 주십시오.
-            </p>
-            <button
-              type="button"
-              className="btn btn-outline-danger mt-3"
-              onClick={begin}
-            >
-              시작하기
-            </button>
-          </section>
-          <section id="qna">
-            <div className="status mx-auto mt-5">
-              <div className="statusBar"></div>
-            </div>
-            <div className="qBox my-5 py-3 mx-auto">{question}</div>
-            <div className="answerBox">{answers}</div>
-          </section>
-          <section id="result" className="mx-auto my-5 py-5 px-3">
-            <h1>당신의 결과는?!</h1>
-            <div className="resultname"></div>
-            <div
-              id="resultImg"
-              className="my-3 col-lg-6 col-md-8 col-sm-10 col-12 mx-auto"
-            ></div>
-            <div className="resultDesc"></div>
-            <button
-              type="button"
-              className="kakao mt-3 py-2 px-3"
-              //   onClick={/* Your share function */ }
-            >
-              공유하기
-            </button>
-          </section>
+        <div className="container px-4 px-lg-5 h-100">
+          <div className="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center" >
+            <section id="main" className="qna-section bg-transparent text-white" >
+              <h1
+                className="text-white font-weight-bold"
+                style={{ fontSize: "30px" }}
+              >
+                내 마음 속 "덫" 찾기
+              </h1>
+              <hr className="qna-divider-light"/>
+               <p className="text-white">
+                나의 마음 속에는 어떤 마음의 덫이 있을까요?<br/>
+                아래 시작하기 버튼을 눌러 시작해 주십시오.
+              </p><br/>
+              <button
+                type="button"
+                className="btn btn-primary btn-xl"
+                onClick={begin}
+              >
+                시작하기
+              </button>
+            </section>
+
+            <section id="qna">
+              <div className="qBox my-5 py-3 mx-auto">{question}</div>
+              <div className="answerBox">{answers}</div>
+              <div className="status mx-auto mt-5">
+                <div className="statusBar"></div>
+              </div>
+            </section>
+            <section id="result" className="mx-auto my-5 py-5 px-3">
+              <h1>당신의 마음속 덫은?</h1>
+              <div className="resultname"></div>
+              <div
+                id="resultImg"
+                className="my-3 col-lg-6 col-md-8 col-sm-10 col-12 mx-auto"
+              ></div>
+              <div className="resultDesc"></div>
+              <button
+                type="button"
+                className="kakao mt-3 py-2 px-3"
+                //   onClick={/* Your share function */ }
+              >
+                공유하기
+              </button>
+            </section>
+        </div>
         </div>
       </header>
     );
