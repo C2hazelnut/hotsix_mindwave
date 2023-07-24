@@ -44,6 +44,11 @@ const Header = () => {
                   회원가입
                 </Link>
               </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/mypage">
+                  마이페이지
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
