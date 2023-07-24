@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import ReactDOM, { createRoot } from "react-dom/client";
 import image from "../asset/body.png"
 
@@ -6,246 +7,246 @@ import "./teststyle.css";
 
 const qnaList = [
   {
-    q: "1.날 떠나버릴지도 모른다는 두려움에 사람들에게 매달린다.",
+    q: "1. 날 떠나버릴지도 모른다는 두려움에 사람들에게 매달린다.",
     a: [
-      { answer: "1", type: null },
-      { answer: "2", type: null },
-      { answer: "3", type: null },
-      { answer: "4", type: [0] },
-      { answer: "5", type: [0] },
-      { answer: "6", type: [0] },
+      { answer: "완전히 나와 다르다.", type: null },
+      { answer: "대부분 나와 다르다.", type: null },
+      { answer: "다른 면보다 일치하는 면이 좀 더 많다.", type: null },
+      { answer: "어느 정도는 나와 일치한다.", type: [0] },
+      { answer: "대부분 나와 일치한다.", type: [0] },
+      { answer: "완전히 나와 일치한다.", type: [0] },
     ],
   },
   {
     q: "2. 날 사랑하는 사람이 다른 사람을 더 좋아하게 되어 나를 떠날까봐 굉장히 걱정한다. ",
     a: [
-      { answer: "1", type: null },
-      { answer: "2", type: null },
-      { answer: "3", type: null },
-      { answer: "4", type: [0] },
-      { answer: "5", type: [0] },
-      { answer: "6", type: [0] },
+      { answer: "완전히 나와 다르다.", type: null },
+      { answer: "대부분 나와 다르다.", type: null },
+      { answer: "다른 면보다 일치하는 면이 좀 더 많다.", type: null },
+      { answer: "어느 정도는 나와 일치한다.", type: [0] },
+      { answer: "대부분 나와 일치한다.", type: [0] },
+      { answer: "완전히 나와 일치한다.", type: [0] },
     ],
   },
   {
     q: "3. 사람들의 궁극적인 목적이 무엇인지 경계하는 편이다.",
     a: [
-      { answer: "1", type: null },
-      { answer: "2", type: null },
-      { answer: "3", type: null },
-      { answer: "4", type: [1] },
-      { answer: "5", type: [1] },
-      { answer: "6", type: [1] },
+      { answer: "완전히 나와 다르다.", type: null },
+      { answer: "대부분 나와 다르다.", type: null },
+      { answer: "다른 면보다 일치하는 면이 좀 더 많다.", type: null },
+      { answer: "어느 정도는 나와 일치한다.", type: [1] },
+      { answer: "대부분 나와 일치한다.", type: [1] },
+      { answer: "완전히 나와 일치한다.", type: [1] },
     ],
   },
   {
     q: "4. 사람들이 나를 해치지 않을까 하는 걱정에 경계를 늦출 수가 없다. ",
     a: [
-      { answer: "1", type: null },
-      { answer: "2", type: null },
-      { answer: "3", type: null },
-      { answer: "4", type: [1] },
-      { answer: "5", type: [1] },
-      { answer: "6", type: [1] },
+      { answer: "완전히 나와 다르다.", type: null },
+      { answer: "대부분 나와 다르다.", type: null },
+      { answer: "다른 면보다 일치하는 면이 좀 더 많다.", type: null },
+      { answer: "어느 정도는 나와 일치한다.", type: [1] },
+      { answer: "대부분 나와 일치한다.", type: [1] },
+      { answer: "완전히 나와 일치한다.", type: [1] },
     ],
   },
   {
     q: "5. 보통 사람들 보다 병에 걸리거나 다른 나쁜 일이 내게 닥칠까봐 더 많이 걱정하는 편이다.",
     a: [
-      { answer: "1", type: null },
-      { answer: "2", type: null },
-      { answer: "3", type: null },
-      { answer: "4", type: [2] },
-      { answer: "5", type: [2] },
-      { answer: "6", type: [2] },
+      { answer: "완전히 나와 다르다.", type: null },
+      { answer: "대부분 나와 다르다.", type: null },
+      { answer: "다른 면보다 일치하는 면이 좀 더 많다.", type: null },
+      { answer: "어느 정도는 나와 일치한다.", type: [2] },
+      { answer: "대부분 나와 일치한다.", type: [2] },
+      { answer: "완전히 나와 일치한다.", type: [2] },
     ],
   },
   {
     q: "6. 파산해서 거지가 되거나 남에게 의탁하게 될까 봐 걱정한다.",
     a: [
-      { answer: "1", type: null },
-      { answer: "2", type: null },
-      { answer: "3", type: null },
-      { answer: "4", type: [2] },
-      { answer: "5", type: [2] },
-      { answer: "6", type: [2] },
+      { answer: "완전히 나와 다르다.", type: null },
+      { answer: "대부분 나와 다르다.", type: null },
+      { answer: "다른 면보다 일치하는 면이 좀 더 많다.", type: null },
+      { answer: "어느 정도는 나와 일치한다.", type: [2] },
+      { answer: "대부분 나와 일치한다.", type: [2] },
+      { answer: "완전히 나와 일치한다.", type: [2] },
     ],
   },
   {
     q: "7. 살아가는 동안 혼자 힘으로 난관을 극복해 나갈 수 가 없기에 도움을 줄 사람이 필요하다.",
     a: [
-      { answer: "1", type: null },
-      { answer: "2", type: null },
-      { answer: "3", type: null },
-      { answer: "4", type: [3] },
-      { answer: "5", type: [3] },
-      { answer: "6", type: [3] },
+      { answer: "완전히 나와 다르다.", type: null },
+      { answer: "대부분 나와 다르다.", type: null },
+      { answer: "다른 면보다 일치하는 면이 좀 더 많다.", type: null },
+      { answer: "어느 정도는 나와 일치한다.", type: [3] },
+      { answer: "대부분 나와 일치한다.", type: [3] },
+      { answer: "완전히 나와 일치한다.", type: [3] },
     ],
   },
   {
     q: "8. 부모님과 나는 서로의 사생활에 지나치게 관여하는 경향이 있다.",
     a: [
-      { answer: "1", type: null },
-      { answer: "2", type: null },
-      { answer: "3", type: null },
-      { answer: "4", type: [3] },
-      { answer: "5", type: [3] },
-      { answer: "6", type: [3] },
+      { answer: "완전히 나와 다르다.", type: null },
+      { answer: "대부분 나와 다르다.", type: null },
+      { answer: "다른 면보다 일치하는 면이 좀 더 많다.", type: null },
+      { answer: "어느 정도는 나와 일치한다.", type: [3] },
+      { answer: "대부분 나와 일치한다.", type: [3] },
+      { answer: "완전히 나와 일치한다.", type: [3] },
     ],
   },
   {
     q: "9. 나를 돌봐주거나 나와 마음을 나누거나 내게 일어나는 일에 대해 깊이 염려해줄 사람이 없었다.",
     a: [
-      { answer: "1", type: null },
-      { answer: "2", type: null },
-      { answer: "3", type: null },
-      { answer: "4", type: [4] },
-      { answer: "5", type: [4] },
-      { answer: "6", type: [4] },
+      { answer: "완전히 나와 다르다.", type: null },
+      { answer: "대부분 나와 다르다.", type: null },
+      { answer: "다른 면보다 일치하는 면이 좀 더 많다.", type: null },
+      { answer: "어느 정도는 나와 일치한다.", type: [4] },
+      { answer: "대부분 나와 일치한다.", type: [4] },
+      { answer: "완전히 나와 일치한다.", type: [4] },
     ],
   },
   {
     q: "10. 이해와 공감, 지도, 충고, 지지에 대한 나의 정서적 욕구를 사람들이 만족시켜 준 적이 없다.  ",
     a: [
-      { answer: "1", type: null },
-      { answer: "2", type: null },
-      { answer: "3", type: null },
-      { answer: "4", type: [4] },
-      { answer: "5", type: [4] },
-      { answer: "6", type: [4] },
+      { answer: "완전히 나와 다르다.", type: null },
+      { answer: "대부분 나와 다르다.", type: null },
+      { answer: "다른 면보다 일치하는 면이 좀 더 많다.", type: null },
+      { answer: "어느 정도는 나와 일치한다.", type: [4] },
+      { answer: "대부분 나와 일치한다.", type: [4] },
+      { answer: "완전히 나와 일치한다.", type: [4] },
     ],
   },
   {
     q: "11. 나는 소속감이 없다. 나는 남들과 다르고 어디에도 어울리지 않는다. ",
     a: [
-      { answer: "1", type: null },
-      { answer: "2", type: null },
-      { answer: "3", type: null },
-      { answer: "4", type: [5] },
-      { answer: "5", type: [5] },
-      { answer: "6", type: [5] },
+      { answer: "완전히 나와 다르다.", type: null },
+      { answer: "대부분 나와 다르다.", type: null },
+      { answer: "다른 면보다 일치하는 면이 좀 더 많다.", type: null },
+      { answer: "어느 정도는 나와 일치한다.", type: [5] },
+      { answer: "대부분 나와 일치한다.", type: [5] },
+      { answer: "완전히 나와 일치한다.", type: [5] },
     ],
   },
   {
     q: "12. 나는 따분하고 싫증나는 사람이다. 사교적인 자리에서 어떻게 이야기해야 할지 모르겠다. ",
     a: [
-      { answer: "1", type: null },
-      { answer: "2", type: null },
-      { answer: "3", type: null },
-      { answer: "4", type: [5] },
-      { answer: "5", type: [5] },
-      { answer: "6", type: [5] },
+      { answer: "완전히 나와 다르다.", type: null },
+      { answer: "대부분 나와 다르다.", type: null },
+      { answer: "다른 면보다 일치하는 면이 좀 더 많다.", type: null },
+      { answer: "어느 정도는 나와 일치한다.", type: [5] },
+      { answer: "대부분 나와 일치한다.", type: [5] },
+      { answer: "완전히 나와 일치한다.", type: [5] },
     ],
   },
   {
     q: "13. 내가 원하는 사람이 나의 모든 진실을 알게 되면 나를 사랑할 수 없을 것이다. ",
     a: [
-      { answer: "1", type: null },
-      { answer: "2", type: null },
-      { answer: "3", type: null },
-      { answer: "4", type: [6] },
-      { answer: "5", type: [6] },
-      { answer: "6", type: [6] },
+      { answer: "완전히 나와 다르다.", type: null },
+      { answer: "대부분 나와 다르다.", type: null },
+      { answer: "다른 면보다 일치하는 면이 좀 더 많다.", type: null },
+      { answer: "어느 정도는 나와 일치한다.", type: [6] },
+      { answer: "대부분 나와 일치한다.", type: [6] },
+      { answer: "완전히 나와 일치한다.", type: [6] },
     ],
   },
 
   {
     q: "14. 나는 다른 사람들의 사랑과 관심, 존경을 받을 가치가 없다. ",
     a: [
-      { answer: "1", type: null },
-      { answer: "2", type: null },
-      { answer: "3", type: null },
-      { answer: "4", type: [6] },
-      { answer: "5", type: [6] },
-      { answer: "6", type: [6] },
+      { answer: "완전히 나와 다르다.", type: null },
+      { answer: "대부분 나와 다르다.", type: null },
+      { answer: "다른 면보다 일치하는 면이 좀 더 많다.", type: null },
+      { answer: "어느 정도는 나와 일치한다.", type: [6] },
+      { answer: "대부분 나와 일치한다.", type: [6] },
+      { answer: "완전히 나와 일치한다.", type: [6] },
     ],
   },
   {
     q: "15. 나는 일(학업)에 있어서 남들보다 능력이 없다.",
-    a: [
-      { answer: "1", type: null },
-      { answer: "2", type: null },
-      { answer: "3", type: null },
-      { answer: "4", type: [7] },
-      { answer: "5", type: [7] },
-      { answer: "6", type: [7] },
-    ],
+    a: [      
+    { answer: "완전히 나와 다르다.", type: null },
+    { answer: "대부분 나와 다르다.", type: null },
+    { answer: "다른 면보다 일치하는 면이 좀 더 많다.", type: null },
+    { answer: "어느 정도는 나와 일치한다.", type: [7] },
+    { answer: "대부분 나와 일치한다.", type: [7] },
+    { answer: "완전히 나와 일치한다.", type: [7] },
+  ],
   },
   {
     q: "16. 남들보다 재능이나 지적능력, 경력이 모자라기 때문에 나는 이 자리에 어울리지 않는다고 느낀다. ",
     a: [
-      { answer: "1", type: null },
-      { answer: "2", type: null },
-      { answer: "3", type: null },
-      { answer: "4", type: [7] },
-      { answer: "5", type: [7] },
-      { answer: "6", type: [7] },
+      { answer: "완전히 나와 다르다.", type: null },
+      { answer: "대부분 나와 다르다.", type: null },
+      { answer: "다른 면보다 일치하는 면이 좀 더 많다.", type: null },
+      { answer: "어느 정도는 나와 일치한다.", type: [7] },
+      { answer: "대부분 나와 일치한다.", type: [7] },
+      { answer: "완전히 나와 일치한다.", type: [7] },
     ],
   },
   {
     q: "17. 다른 사람들이 원하는 걸 내가 해주지 않으면 사람들은 나에게 어떤 방식으로든 보복하거나 나를 거부할 것이다.",
     a: [
-      { answer: "1", type: null },
-      { answer: "2", type: null },
-      { answer: "3", type: null },
-      { answer: "4", type: [8] },
-      { answer: "5", type: [8] },
-      { answer: "6", type: [8] },
+      { answer: "완전히 나와 다르다.", type: null },
+      { answer: "대부분 나와 다르다.", type: null },
+      { answer: "다른 면보다 일치하는 면이 좀 더 많다.", type: null },
+      { answer: "어느 정도는 나와 일치한다.", type: [8] },
+      { answer: "대부분 나와 일치한다.", type: [8] },
+      { answer: "완전히 나와 일치한다.", type: [8] },
     ],
   },
   {
     q: "18. 사람들은 내가 남들만을 위하고 자신을 위할줄 모른다고 생각한다. ",
     a: [
-      { answer: "1", type: null },
-      { answer: "2", type: null },
-      { answer: "3", type: null },
-      { answer: "4", type: [8] },
-      { answer: "5", type: [8] },
-      { answer: "6", type: [8] },
+      { answer: "완전히 나와 다르다.", type: null },
+      { answer: "대부분 나와 다르다.", type: null },
+      { answer: "다른 면보다 일치하는 면이 좀 더 많다.", type: null },
+      { answer: "어느 정도는 나와 일치한다.", type: [8] },
+      { answer: "대부분 나와 일치한다.", type: [8] },
+      { answer: "완전히 나와 일치한다.", type: [8] },
     ],
   },
   {
     q: "19. 나는 최선을 다한다. 적당한 수준에 만족할 수 없다.  ",
     a: [
-      { answer: "1", type: null },
-      { answer: "2", type: null },
-      { answer: "3", type: null },
-      { answer: "4", type: [9] },
-      { answer: "5", type: [9] },
-      { answer: "6", type: [9] },
+      { answer: "완전히 나와 다르다.", type: null },
+      { answer: "대부분 나와 다르다.", type: null },
+      { answer: "다른 면보다 일치하는 면이 좀 더 많다.", type: null },
+      { answer: "어느 정도는 나와 일치한다.", type: [9] },
+      { answer: "대부분 나와 일치한다.", type: [9] },
+      { answer: "완전히 나와 일치한다.", type: [9] },
     ],
   },
   {
     q: "20. 나는 할 일이 너무 많아서 쉬거나 즐길 시간이 없다. ",
     a: [
-      { answer: "1", type: null },
-      { answer: "2", type: null },
-      { answer: "3", type: null },
-      { answer: "4", type: [9] },
-      { answer: "5", type: [9] },
-      { answer: "6", type: [9] },
+      { answer: "완전히 나와 다르다.", type: null },
+      { answer: "대부분 나와 다르다.", type: null },
+      { answer: "다른 면보다 일치하는 면이 좀 더 많다.", type: null },
+      { answer: "어느 정도는 나와 일치한다.", type: [9] },
+      { answer: "대부분 나와 일치한다.", type: [9] },
+      { answer: "완전히 나와 일치한다.", type: [9] },
     ],
   },
   {
     q: "21. 다른 사람이 지키는 정상적인 규칙이나 관례를 따를 필요는 없다.  ",
     a: [
-      { answer: "1", type: null },
-      { answer: "2", type: null },
-      { answer: "3", type: null },
-      { answer: "4", type: [10] },
-      { answer: "5", type: [10] },
-      { answer: "6", type: [10] },
+      { answer: "완전히 나와 다르다.", type: null },
+      { answer: "대부분 나와 다르다.", type: null },
+      { answer: "다른 면보다 일치하는 면이 좀 더 많다.", type: null },
+      { answer: "어느 정도는 나와 일치한다.", type: [10] },
+      { answer: "대부분 나와 일치한다.", type: [10] },
+      { answer: "완전히 나와 일치한다.", type: [10] },
     ],
   },
   {
     q: "22. 나는 일상적이고 지루한 일들을 완수해 내거나 내가 내 감정을 조절하는 습관을 기르지 못했다.",
     a: [
-      { answer: "1", type: null },
-      { answer: "2", type: null },
-      { answer: "3", type: null },
-      { answer: "4", type: [10] },
-      { answer: "5", type: [10] },
-      { answer: "6", type: [10] },
+      { answer: "완전히 나와 다르다.", type: null },
+      { answer: "대부분 나와 다르다.", type: null },
+      { answer: "다른 면보다 일치하는 면이 좀 더 많다.", type: null },
+      { answer: "어느 정도는 나와 일치한다.", type: [10] },
+      { answer: "대부분 나와 일치한다.", type: [10] },
+      { answer: "완전히 나와 일치한다.", type: [10] },
     ],
   },
 ];
@@ -468,6 +469,9 @@ const QnaComponent = () => {
         resultDesc.innerHTML = infoList[point].desc;
         resultSection.appendChild(resultDesc);
 
+        const resulthr = document.createElement("hr");
+        resultSection.appendChild(resulthr);
+
         resultContainer.appendChild(resultSection);
       } else {
         // 적절한 오류 처리
@@ -680,6 +684,7 @@ const QnaComponent = () => {
       <header className="masthead">
         <div className="container px-4 px-lg-5 h-100">
           <div className="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center" >
+            {/* 초기 화면 section */}
             <section id="main" className="qna-section bg-transparent text-white" >
               <h1
                 className="text-white font-weight-bold"
@@ -688,10 +693,21 @@ const QnaComponent = () => {
                 내 마음 속 "덫" 찾기
               </h1>
               <hr className="qna-divider-light"/>
-               <p className="text-white">
-                나의 마음 속에는 어떤 마음의 덫이 있을까요?<br/>
-                아래 시작하기 버튼을 눌러 시작해 주십시오.
-              </p><br/>
+              <div className="alt my-5 py-4 mx-auto">
+                <p className="text-white danger">&lt;&lt;유의사항&gt;&gt;</p>
+                <p className="text-white">
+                ※ 어린 시절과 현재 중 모두에 해당하는 항목이 있다면<br/>
+                <span className="fw-boldline">둘 중 더 높은 수치</span>로 선택해 주시길 바랍니다.
+                </p>
+                <p className="text-white">
+                ※ <span className="fw-boldline">테스트 항목 간의 이동이 불가능</span>합니다.<br/>
+                  천천히 지문을 읽고 신중하게 선택해 주시길 바랍니다.
+                </p>
+                <p className="text-white">
+                ※ <span className="fw-boldline">총 22 항목</span>으로 구성되어 있으며,<br/>
+                  소요시간은 약 5분입니다.
+                </p>
+              </div>
               <button
                 type="button"
                 className="btn btn-primary btn-xl"
@@ -701,13 +717,18 @@ const QnaComponent = () => {
               </button>
             </section>
 
+            {/* 설문지 section */}
             <section id="qna">
-              <div className="qBox my-5 py-3 mx-auto">{question}</div>
+              <div className="qBox my-5 py-4 mx-auto">{question}</div>
               <div className="answerBox">{answers}</div>
-              <div className="status mx-auto mt-5">
+              <div className="status mx-auto mt-5 my-5">
                 <div className="statusBar"></div>
               </div>
             </section>
+
+            {/* 결과 section */}
+            
+            
             <section id="result" className="mx-auto my-5 py-5 px-3">
               <h1>당신의 마음속 덫은?</h1>
               <div className="resultname"></div>
@@ -716,6 +737,7 @@ const QnaComponent = () => {
                 className="my-3 col-lg-6 col-md-8 col-sm-10 col-12 mx-auto"
               ></div>
               <div className="resultDesc"></div>
+              <div className="resulthr"></div>
               <button
                 type="button"
                 className="kakao mt-3 py-2 px-3"
@@ -723,11 +745,11 @@ const QnaComponent = () => {
               >
                 공유하기
               </button>
-            </section>
+          </section>            
         </div>
-        </div>
-      </header>
-    );
+      </div>
+    </header>
+  );
 };
 
 export default QnaComponent;

@@ -19,7 +19,7 @@ const Creative = () => {
             <div className="col-lg-8 align-self-baseline">
               <p className="text-white-75 mb-5">
                 집착, 의존, 불안, 두려움, 분노, 고립, 엄격한 기준으로
-                고통받고있나요? <br />
+                고통받고있나요? <br/>
                 테스트를 통해 당신이 빠진 심리적 덫의 원인과 해결책을
                 알려드릴게요
               </p>
@@ -86,28 +86,138 @@ const Creative = () => {
       <section className="page-section bg-dark text-white" id="contact">
         <div className="container px-4 px-lg-5">
           <div className="text-center mt-5">
-            <h2 className="display-4">Contact</h2>
+            <h2 className="display-4">마음의 덫으로는...</h2>
             <hr className="divider divider-light" />
           </div>
           <div className="row justify-content-center">
+            {/* 버림받음의 덫 */}
             <div className="col-lg-4 col-sm-6 mb-4">
               <div className="d-flex flex-column align-items-center">
                 <div className="icon-contact mb-3">
-                  <i className="bi bi-telephone-fill"></i>
+                <i className="bi bi-telephone-fill"></i>
                 </div>
                 <div className="text-center">
-                  <h4 className="text-white">Phone</h4>
-                  <p className="text-muted">+1 (555) 123-4567</p>
+                  <h4 className="text-white">버림받음의 덫</h4>
+                  <p className="text-muted">~~</p>
                 </div>
               </div>
             </div>
+            {/* 불신과 학대의 덫 */}
+            <div className="col-lg-4 col-sm-6 mb-4">
+              <div className="d-flex flex-column align-items-center">
+                <div className="icon-contact mb-3">
+                <i className="bi bi-telephone-fill"></i>
+                </div>
+                <div className="text-center">
+                  <h4 className="text-white">불신과 학대의 덫</h4>
+                  <p className="text-muted">으앙.</p>
+                </div>
+              </div>
+            </div>
+            {/* 취약성의 덫 */}
             <div className="col-lg-4 col-sm-6 mb-4">
               <div className="d-flex flex-column align-items-center">
                 <div className="icon-contact mb-3">
                   <i className="bi bi-envelope-fill"></i>
                 </div>
                 <div className="text-center">
-                  <h4 className="text-white">Email</h4>
+                  <h4 className="text-white">취약성의 덫</h4>
+                  <p className="text-muted">info@yourwebsite.com</p>
+                </div>
+              </div>
+            </div>
+            {/* 의존의 덫 */}
+            <div className="col-lg-4 col-sm-6 mb-4">
+              <div className="d-flex flex-column align-items-center">
+                <div className="icon-contact mb-3">
+                  <i className="bi bi-envelope-fill"></i>
+                </div>
+                <div className="text-center">
+                  <h4 className="text-white">의존의 덫</h4>
+                  <p className="text-muted">info@yourwebsite.com</p>
+                </div>
+              </div>
+            </div>
+            {/* 정서적 결핍의 덫 */}
+            <div className="col-lg-4 col-sm-6 mb-4">
+              <div className="d-flex flex-column align-items-center">
+                <div className="icon-contact mb-3">
+                  <i className="bi bi-envelope-fill"></i>
+                </div>
+                <div className="text-center">
+                  <h4 className="text-white">정서적 결핍의 덫</h4>
+                  <p className="text-muted">info@yourwebsite.com</p>
+                </div>
+              </div>
+            </div>
+            {/* 사회적 소외의 덫 */}
+            <div className="col-lg-4 col-sm-6 mb-4">
+              <div className="d-flex flex-column align-items-center">
+                <div className="icon-contact mb-3">
+                  <i className="bi bi-envelope-fill"></i>
+                </div>
+                <div className="text-center">
+                  <h4 className="text-white">사회적 소외의 덫</h4>
+                  <p className="text-muted">info@yourwebsite.com</p>
+                </div>
+              </div>
+            </div>
+            {/* 결함의 덫 */}
+            <div className="col-lg-4 col-sm-6 mb-4">
+              <div className="d-flex flex-column align-items-center">
+                <div className="icon-contact mb-3">
+                  <i className="bi bi-envelope-fill"></i>
+                </div>
+                <div className="text-center">
+                  <h4 className="text-white">결함의 덫</h4>
+                  <p className="text-muted">info@yourwebsite.com</p>
+                </div>
+              </div>
+            </div>
+            {/* 실패의 덫*/}
+            <div className="col-lg-4 col-sm-6 mb-4">
+              <div className="d-flex flex-column align-items-center">
+                <div className="icon-contact mb-3">
+                  <i className="bi bi-envelope-fill"></i>
+                </div>
+                <div className="text-center">
+                  <h4 className="text-white">실패의 덫</h4>
+                  <p className="text-muted">info@yourwebsite.com</p>
+                </div>
+              </div>
+            </div>
+            {/* 복종의 덫 */}
+            <div className="col-lg-4 col-sm-6 mb-4">
+              <div className="d-flex flex-column align-items-center">
+                <div className="icon-contact mb-3">
+                  <i className="bi bi-envelope-fill"></i>
+                </div>
+                <div className="text-center">
+                  <h4 className="text-white">복종의 덫</h4>
+                  <p className="text-muted">info@yourwebsite.com</p>
+                </div>
+              </div>
+            </div>
+            {/* 엄격한 기준의 덫 */}
+            <div className="col-lg-4 col-sm-6 mb-4">
+              <div className="d-flex flex-column align-items-center">
+                <div className="icon-contact mb-3">
+                  <i className="bi bi-envelope-fill"></i>
+                </div>
+                <div className="text-center">
+                  <h4 className="text-white">엄격한 기준의 덫</h4>
+                  <p className="text-muted">info@yourwebsite.com</p>
+                </div>
+              </div>
+            </div>
+            {/* 특권 의식의 덫 */}
+            <div className="col-lg-4 col-sm-6 mb-4">
+              <div className="d-flex flex-column align-items-center">
+                <div className="icon-contact mb-3">
+                  <i className="bi bi-envelope-fill"></i>
+                </div>
+                <div className="text-center">
+                  <h4 className="text-white">특권 의식의 덫</h4>
                   <p className="text-muted">info@yourwebsite.com</p>
                 </div>
               </div>
