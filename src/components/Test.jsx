@@ -10,12 +10,12 @@ const Test = () => {
   return (
     <div className="container">
       <section id="main" className="mx-auto my-5 py-5 px-3">
-        <h1>십이간지로 알아보는 연애유형</h1>
+        <h1>마음의 덫 찾기</h1>
         <div className="col-lg-6 col-md-8 col-sm-10 col-12 mx-auto">
           <img src="./img/main.png" alt="mainImage" className="img-fluid" />
         </div>
         <p>
-          나만의 MBTI 사이트입니다! <br />
+          나의 마음 속에는 어떤 마음의 덫이 있을까요?<br />
           아래 시작하기 버튼을 눌러 시작해 주십시오.
         </p>
         <button
