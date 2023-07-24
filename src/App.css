@@ -1363,6 +1363,12 @@ progress {
     flex: 0 0 auto;
     width: 100%;
   }
+  .col-lg-13 {
+    flex: 0 0 auto;
+    width: 30%;
+    margin-right: 28px;
+  }
+
   .offset-lg-0 {
     margin-left: 0;
   }
@@ -7935,6 +7941,10 @@ fieldset:disabled .btn {
   margin-top: 3rem !important;
 }
 
+.mt-6 {
+  margin-top: 8rem !important;
+}
+
 .mt-auto {
   margin-top: auto !important;
 }
@@ -11196,6 +11206,7 @@ body {
   border-radius: 10rem;
 }
 
+
 hr.divider {
   height: 0.2rem;
   max-width: 3.25rem;
@@ -11206,6 +11217,8 @@ hr.divider {
 
 hr.divider-light {
   background-color: #fff;
+  height: 0.15rem;
+  max-width: 20rem;
 }
 
 hr.sign-divider-light {
@@ -11215,6 +11228,30 @@ hr.sign-divider-light {
   color: #fff;
   background-color: #fff;
   opacity: 1;
+}
+
+hr.sign-desc-light {
+  height: 0.1rem;
+  max-width: 15rem;
+  margin: 1.5rem auto;
+  color: #fff;
+  background-color: #fff;
+}
+
+hr.sign-desc-light2 {
+  height: 0.1rem;
+  max-width: 50rem;
+  margin: 1.5rem auto;
+  color: #fff;
+  background-color: #fff;
+}
+
+hr.sign-desc-dark {
+  height: 0.1rem;
+  max-width: 10rem;
+  margin: 1.5rem auto;
+  color: #8C8C8C;
+  background-color: #8C8C8C;
 }
 
 hr.qna-divider-light {
@@ -11418,3 +11455,4 @@ header.masthead .h1 {
 #portfolio .container-xxl .portfolio-box:hover .portfolio-box-caption {
   opacity: 1;
 }
+
