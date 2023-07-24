@@ -20,7 +20,7 @@ function MyPage(){
                         value={selectedDate}
                     />
                 </div> 
-                <p>{selectedDate.toDateString()}</p>
+                <p>{/*selectedDate.toDateString()*/}</p>
                 <div class="d-grid">
                     <button class="btn btn-primary btn-xl">
                         일기 작성
