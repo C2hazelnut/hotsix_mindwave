@@ -1,7 +1,7 @@
 .c-grid{
   display: grid;
-  /*justify-content: center;
-  align-items: center;*/
+  justify-content: center;
+  align-items: center;
 }
 p{
 color: black;
@@ -13,6 +13,7 @@ max-width: 100%;
 /*border: none;*/
 font-family: "Gowun Batang", serif;
 line-height: 1.125em;
+background-color: white;
 }
 
 .react-calendar--doubleView {
