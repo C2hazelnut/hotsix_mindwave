@@ -100,12 +100,12 @@ hr {
 .answerList {
   background-color: gray;
   color: white;
-  display: inline-block ; /* 가로로 나열하기 위해 수정함 */
-  width: 500px; /* 버튼의 너비를 설정함 (원하는 크기로 조절) */
-  height: 60px; /* 버튼의 높이를 설정함 (원하는 크기로 조절) */
+  /* display: inline-block ; 가로로 나열하기 위해 수정함 */
+  width: 80px; /* 버튼의 너비를 설정함 (원하는 크기로 조절) */
+  height: 80px; /* 버튼의 높이를 설정함 (원하는 크기로 조절) */
   border: 0px;
-  
-  font-size: 20px;
+  border-radius: 50%;
+  font-size: 27px;
 }
 
 .answerList:hover,
@@ -164,6 +164,14 @@ hr {
 
 .fw-boldline {
   font-weight: 700 !important;
+  text-decoration: underline;
+}
+
+.fw-boldline2 {
+  font-weight: 700 !important;
+}
+
+.fw-boldline3 {
   text-decoration: underline;
 }
 
