@@ -8,6 +8,18 @@ const Services = (e) => {
   const handleDateChange = (date) => {
     setSelectedDate(date);
   };
+  const today = new Date();
+  const tileDisabled = ({ activeStartDate, date, view }) => {
+    return date > today;
+  };
+  // 오늘 이후 날짜 disable
+  // const tileContent = ({ date, view }) => {
+  //   if (date > today) {
+  //     return (
+  //       <span style={{ textDecoration: "line-through" }}>{date.getDate()}</span>
+  //     );
+  //   }
+  // };
 
   return (
     <header className="masthead">
@@ -38,10 +50,12 @@ const Services = (e) => {
           {/* 달력 */}
 
           <div className="content">
-            <div className="mt-6 diary-calendar">
+            <div className="mt-6 diary-calendar __tile--disabled ">
               <Calendar
               onChange={handleDateChange}
               value={selectedDate}
+              tileDisabled={tileDisabled}
+              className="react-calendar"
               />
             </div>
           </div>
