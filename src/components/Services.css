@@ -1,13 +1,16 @@
 .c-grid{
   display: grid;
-
-  /*justify-content: center;
-  align-items: center;*/
+  justify-content: center;
+  align-items: center;
 }
 
-/* p {
+.m-grid{
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  margin: 100px;
+}
 
-} */
 
 .react-calendar {
 width: 630px;
@@ -15,7 +18,6 @@ font-family: "Gowun Batang", serif;
 line-height: 1em;
 background-color: rgba(255, 255, 255, 0.45);
 margin-top: -3%;
-margin-left: 5%;
 font-size: 1.3em;
 padding-bottom: 0.7em;
 border-radius: 17px;
@@ -173,6 +175,7 @@ background-color: #e6e6e6;
   height: 100vh; 
   background-color: #333;
   color: #fff; 
+  flex-shrink: 0;
 }
 
 .left-area{
@@ -193,6 +196,7 @@ background-color: #e6e6e6;
   background-color: #555;
 }
 */
+
 .input {
   padding: 10px 15px;
   border: 1px solid #ccc;
@@ -257,4 +261,17 @@ background-color: #e6e6e6;
 
   width: 35%;
   height: 9%;
+}
+
+.result{
+  padding: 50px;
+  margin-left: 50px;
+  margin-right: 130px;
+  margin-bottom: 0.6rem;
+  border-radius: 20px; /* You can adjust this value to control the roundness */
+
+  color: white;
+  background-color: black;
+  opacity: 0.7;
+  text-align: center;
 }
