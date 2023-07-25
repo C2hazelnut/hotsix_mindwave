@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState} from "react";
 import Calendar from 'react-calendar';
 import './Services.css';
 
@@ -7,6 +7,24 @@ const Services = (e) => {
   const [selectedDate, setSelectedDate] = useState(new Date());
   const handleDateChange = (date) => {
     setSelectedDate(date);
+  };
+
+  const [buttonVisible, setButtonVisible] = useState(true);
+  const [contentVisible, setContentVisible] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+  const handleButtonClick = (props) => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+      setButtonVisible(false);
+      setContentVisible(true);
+    }, 2000);
+  };
+
+  const handleContentClick = () => {
+    setButtonVisible(true);
+    setContentVisible(false);
   };
 
   return (
@@ -32,7 +50,9 @@ const Services = (e) => {
               placeholder="오늘의 일기를 작성하세요..."
               className="write mb-3"
             />
-            <div className="d-grid"><button className="btn btn-primary btn-xl">진단하기</button></div>
+            <div className="d-grid">
+              {buttonVisible && <button className="btn btn-primary btn-xl" onClick={handleButtonClick}>{loading ? '당신의 감정은...?' : '진단하기'}</button>}
+            </div>
           </div>
 
           {/* 달력 */}
@@ -47,6 +67,16 @@ const Services = (e) => {
           </div>
         </div>
       </div>
+      {contentVisible && (
+        <div>
+          <div class="result">
+            당신은 두려움을 느끼고 있습니다.<br/>
+            무엇이 당신에게 두려움을(를) 느끼게 했나요?<br/>
+            스스로에게 위로와 격려의 말을 건네봅시다 
+          </div>
+          <button className="btn btn-primary btn-xl" onClick={handleContentClick}>일기 또 작성하기</button>
+        </div>
+      )}
     </header>
   );
 };
