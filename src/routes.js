@@ -4,7 +4,6 @@ import Services from "./components/Services";
 import SignIn from "./components/SignIn";
 import SignUp from "./components/SignUp";
 import Creative from "./components/Creative";
-// import Test from "./components/Test";
 import QnaComponent from "./components/QnaComponent";
 import MyPage from "./components/MyPage";
 import { Link } from "react-router-dom";
