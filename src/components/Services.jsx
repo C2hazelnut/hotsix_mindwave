@@ -87,10 +87,10 @@ const Services = (e) => {
       </header>
 
       <section className="page-section" id="results">
-        <div className="container px-4 px-lg-5">
+        <div className="result-content">
           {contentVisible && (
           <div>
-            <div class="result">
+            <div class="result" >
               {/*감정분석 결과*/}
               당신은 <span className="fw-boldline">두려움</span>을(를) 느끼고 있습니다.<br/>
               무엇이 당신에게 두려움을(를) 느끼게 했나요?<br/>
