@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import ReactDOM, { createRoot } from "react-dom/client";
-import image from "../asset/body.png"
+import image from "../asset/body.png";
 
 import "./teststyle.css";
 
@@ -163,14 +163,14 @@ const qnaList = [
   },
   {
     q: "15. 나는 일(학업)에 있어서 남들보다 능력이 없다.",
-    a: [      
-    { answer: 1, type: null },
-    { answer: 2, type: null },
-    { answer: 3, type: null },
-    { answer: 4, type: [7] },
-    { answer: 5, type: [7] },
-    { answer: 6, type: [7] },
-  ],
+    a: [
+      { answer: 1, type: null },
+      { answer: 2, type: null },
+      { answer: 3, type: null },
+      { answer: 4, type: [7] },
+      { answer: 5, type: [7] },
+      { answer: 6, type: [7] },
+    ],
   },
   {
     q: "16. 남들보다 재능이나 지적능력, 경력이 모자라기 때문에 나는 이 자리에 어울리지 않는다고 느낀다. ",
@@ -434,15 +434,47 @@ const QnaComponent = () => {
   const [question, setQuestion] = useState(null);
   const [answers, setAnswers] = useState([]);
 
+  // const calResult = () => {
+  //   console.log("final select:", select);
+  //   const max = Math.max(...select);
+  //   const result = select.reduce((acc, cur, idx) => {
+  //     if (cur === max) acc.push(idx);
+  //     return acc;
+  //   }, []);
+  //   console.log("result", result);
+  //   return result;
+  // };
+
   const calResult = () => {
     console.log("final select:", select);
     const max = Math.max(...select);
-    const result = select.reduce((acc, cur, idx) => {
+    const maxIndices = select.reduce((acc, cur, idx) => {
       if (cur === max) acc.push(idx);
       return acc;
     }, []);
-    console.log("result", result);
-    return result;
+
+    const getRandomIndices = (arr, n) => {
+      let result = new Array(n);
+      let len = arr.length;
+      let taken = new Array(len);
+
+      if (n > len) {
+        throw new RangeError(
+          "getRandomIndices: more elements taken than available"
+        );
+      }
+
+      while (n--) {
+        const x = Math.floor(Math.random() * len);
+        result[n] = arr[x in taken ? taken[x] : x];
+        taken[x] = --len in taken ? taken[len] : len;
+      }
+      return result;
+    };
+
+    const randomResult = getRandomIndices(maxIndices, 3);
+    console.log("result", randomResult);
+    return randomResult;
   };
 
   const setResult = () => {
@@ -458,12 +490,12 @@ const QnaComponent = () => {
         resultName.innerHTML = infoList[point].name;
         resultSection.appendChild(resultName);
 
-        const resultImg = document.createElement("img");
-        const imgURL = `img/image-${point}.png`;
-        resultImg.src = imgURL;
-        resultImg.alt = point;
-        resultImg.classList.add("img-fluid");
-        resultSection.appendChild(resultImg);
+        // const resultImg = document.createElement("img");
+        // const imgURL = `img/image-${point}.png`;
+        // resultImg.src = imgURL;
+        // resultImg.alt = point;
+        // resultImg.classList.add("img-fluid");
+        // resultSection.appendChild(resultImg);
 
         const resultDesc = document.createElement("p");
         resultDesc.innerHTML = infoList[point].desc;
@@ -481,46 +513,6 @@ const QnaComponent = () => {
       }
     });
   };
-
-  //   const setResult = () => {
-  //     const point = calResult()[0];
-  //     const resultName = document.querySelector(".resultname");
-
-  //     if (infoList[point]) {
-  //       resultName.innerHTML = infoList[point].name;
-
-  //       const resultImg = document.createElement("img");
-  //       const imgDiv = document.querySelector("#resultImg");
-  //       const imgURL = `img/image-${point}.png`;
-  //       resultImg.src = imgURL;
-  //       resultImg.alt = point;
-  //       resultImg.classList.add("img-fluid");
-  //       imgDiv.appendChild(resultImg);
-
-  //       const resultDesc = document.querySelector(".resultDesc");
-  //       resultDesc.innerHTML = infoList[point].desc;
-  //     } else {
-  //       // 적절한 오류 처리
-  //       resultName.innerHTML = "알 수 없는 결과";
-  //     }
-  //   };
-
-  //   const setResult = ()[0] => {
-  //     const point = calResult();
-  //     const resultName = document.querySelector(".resultname");
-  //     resultName.innerHTML = infoList[point].name;
-
-  //     const resultImg = document.createElement("img");
-  //     const imgDiv = document.querySelector("#resultImg");
-  //     const imgURL = `img/image-${point}.png`;
-  //     resultImg.src = imgURL;
-  //     resultImg.alt = point;
-  //     resultImg.classList.add("img-fluid");
-  //     imgDiv.appendChild(resultImg);
-
-  //     const resultDesc = document.querySelector(".resultDesc");
-  //     resultDesc.innerHTML = infoList[point].desc;
-  //   };
 
   const goResult = () => {
     const qna = document.querySelector("#qna");
@@ -680,82 +672,96 @@ const QnaComponent = () => {
     }, 450);
   };
 
-    return (
-      <header className="masthead">
-        <div className="container px-4 px-lg-5 h-100">
-          <div className="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center" >
-            {/* 초기 화면 section */}
-            <section id="main" className="qna-section bg-transparent text-white" >
-              <h1
-                className="text-white font-weight-bold"
-                style={{ fontSize: "30px" }}
-              >
-                내 마음 속 "덫" 찾기
-              </h1>
-              <hr className="qna-divider-light"/>
-              <div className="alt my-5 py-4 mx-auto">
-                <p className="text-white danger">&lt;&lt;유의사항&gt;&gt;</p>
-                <p className="text-white">
-                ※ 어린 시절과 현재 중 모두에 해당하는 항목이 있다면<br/>
-                <span className="fw-boldline">둘 중 더 높은 수치</span>로 선택해 주시길 바랍니다.
-                </p>
-                <p className="text-white">
-                ※ <span className="fw-boldline">테스트 항목 간의 이동이 불가능</span>합니다.<br/>
-                  천천히 지문을 읽고 신중하게 선택해 주시길 바랍니다.
-                </p>
-                <p className="text-white">
-                ※ <span className="fw-boldline">총 22 항목</span>으로 구성되어 있으며,<br/>
-                  소요시간은 약 2분입니다.
-                </p>
-                <p className="text-white">
-                ※ 선택 항목은 <span className="fw-boldline2">1점에서 6점</span>으로 구성되어 있습니다.
-                <br/>주어진 질문과 내 특성이 완전히 다른 경우는 <span className="fw-boldline3">1점</span>,
-                <br/>완전히 일치하는 경우는 <span className="fw-boldline3">6점</span>입니다.
-                <br/>
-                </p>
-                
-              </div>
-              <button
-                type="button"
-                className="btn btn-primary btn-xl"
-                onClick={begin}
-              >
-                시작하기
-              </button>
-            </section>
+  return (
+    <header className="masthead">
+      <div className="container px-4 px-lg-5 h-100">
+        <div className="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
+          {/* 초기 화면 section */}
+          <section id="main" className="qna-section bg-transparent text-white">
+            <h1
+              className="text-white font-weight-bold"
+              style={{ fontSize: "30px" }}
+            >
+              내 마음 속 "덫" 찾기
+            </h1>
+            <hr className="qna-divider-light" />
+            <div className="alt my-5 py-4 mx-auto">
+              <p className="text-white danger">&lt;&lt;유의사항&gt;&gt;</p>
+              <p className="text-white">
+                ※ 어린 시절과 현재 중 모두에 해당하는 항목이 있다면
+                <br />
+                <span className="fw-boldline">둘 중 더 높은 수치</span>로 선택해
+                주시길 바랍니다.
+              </p>
+              <p className="text-white">
+                ※{" "}
+                <span className="fw-boldline">
+                  테스트 항목 간의 이동이 불가능
+                </span>
+                합니다.
+                <br />
+                천천히 지문을 읽고 신중하게 선택해 주시길 바랍니다.
+              </p>
+              <p className="text-white">
+                ※ <span className="fw-boldline">총 22 항목</span>으로 구성되어
+                있으며,
+                <br />
+                소요시간은 약 2분입니다.
+              </p>
+              <p className="text-white">
+                ※ 선택 항목은 <span className="fw-boldline2">1점에서 6점</span>
+                으로 구성되어 있습니다.
+                <br />
+                주어진 질문과 내 특성이 완전히 다른 경우는{" "}
+                <span className="fw-boldline3">1점</span>,
+                <br />
+                완전히 일치하는 경우는 <span className="fw-boldline3">6점</span>
+                입니다.
+                <br />
+              </p>
+            </div>
+            <button
+              type="button"
+              className="btn btn-primary btn-xl"
+              onClick={begin}
+            >
+              시작하기
+            </button>
+          </section>
 
-            {/* 설문지 section */}
-            <section id="qna">
-              <div className="qBox py-3 mt-4 mx-auto">{question}</div>
-              <div className="mx-auto mb-3 mt-7 text-white">
-              ※ 지문의 설명과 나의 특성이 <span className="fw-boldline2">일치할수록 큰 숫자</span>로 응답해주시길 바랍니다.
-                </div>
-              <div className="answerBox">{answers}</div>
-              <div className="status mx-auto mt-7">
-                <div className="statusBar"></div>
-              </div>
-            </section>
+          {/* 설문지 section */}
+          <section id="qna">
+            <div className="qBox py-3 mt-4 mx-auto">{question}</div>
+            <div className="mx-auto mb-3 mt-7 text-white">
+              ※ 지문의 설명과 나의 특성이{" "}
+              <span className="fw-boldline2">일치할수록 큰 숫자</span>로
+              응답해주시길 바랍니다.
+            </div>
+            <div className="answerBox">{answers}</div>
+            <div className="status mx-auto mt-7">
+              <div className="statusBar"></div>
+            </div>
+          </section>
 
-            {/* 결과 section */}
-            
-            
-            <section id="result" className="mx-auto my-5 py-5 px-3">
-              <h1>당신의 마음속 덫은?</h1>
-              <div className="resultname"></div>
-              <div
-                id="resultImg"
-                className="my-3 col-lg-6 col-md-8 col-sm-10 col-12 mx-auto"
-              ></div>
-              <div className="resultDesc"></div>
-              <div className="resulthr"></div>
-              <button
-                type="button"
-                className="kakao mt-3 py-2 px-3"
-                //   onClick={/* Your share function */ }
-              >
-                공유하기
-              </button>
-          </section>            
+          {/* 결과 section */}
+
+          <section id="result" className="mx-auto my-5 py-5 px-3">
+            <h1>당신의 마음속 덫은?</h1>
+            <div className="resultname"></div>
+            <div
+              id="resultImg"
+              className="my-3 col-lg-6 col-md-8 col-sm-10 col-12 mx-auto"
+            ></div>
+            <div className="resultDesc"></div>
+            <div className="resulthr"></div>
+            <button
+              type="button"
+              className="kakao mt-3 py-2 px-3"
+              //   onClick={/* Your share function */ }
+            >
+              공유하기
+            </button>
+          </section>
         </div>
       </div>
     </header>
