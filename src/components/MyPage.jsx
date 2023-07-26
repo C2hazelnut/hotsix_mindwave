@@ -7,24 +7,26 @@ function MyPage(){
     const handleDateChange = (date) => {
         setSelectedDate(date);
     };
-
+    const today = new Date();
+    const tileDisabled = ({ activeStartDate, date, view }) => {
+        return date > today;
+    };
     return(
         <header class="masthead">
             <hr class="sign-divider-light"/>
             <h2 class="text-center mt-0 text-white text-center">마이페이지</h2>
             <hr class="sign-divider-light"/>
-            <div class="c-grid">
-                <div class="diary-calendar">
-                    <Calendar
-                        onChange={handleDateChange}
-                        value={selectedDate}
-                    />
-                </div> 
-                <p>{/*selectedDate.toDateString()*/}</p>
-                <div class="d-grid">
-                    <button class="btn btn-primary btn-xl">
-                        일기 작성
-                    </button>
+            <br></br>
+            <div className="container">
+                <div class="m-grid">
+                    <div class="mypage-calendar">
+                        <Calendar
+                            onChange={handleDateChange}
+                            value={selectedDate}
+                            tileDisabled={tileDisabled}
+                            className="react-calendar"
+                        />
+                    </div>
                 </div>
             </div>
         </header>
