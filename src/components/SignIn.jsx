@@ -39,13 +39,13 @@ const SignIn = () => {
       <section id="signin" className="mt-7">
         <hr className="sign-divider-light" />
         <h2 className="text-center mt-0 text-white">Sign In</h2>
-        <hr className="sign-divider-light  mb-5" />
+        <hr className="sign-divider-light" />
 
         <br />
 
-        <div className="row gx-4 gx-lg-5 justify-content-center mb-5">
+        <div className="row gx-4 gx-lg-5 justify-content-center mb-5 mt-2">
           <div className="col-lg-4">
-            <form id="login">
+            <form id="login" style={{ width: "70%", marginLeft:"15%"}}>
               {/* Email input */}
               <div className="form-floating mb-3">
                 <input
