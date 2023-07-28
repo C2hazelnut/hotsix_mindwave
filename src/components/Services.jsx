@@ -115,7 +115,7 @@ const Services = (e) => {
                   className="btn btn-primary btn-xl "
                   style={{
                     height: "90px",
-                    fontSize: "20px",
+                    fontSize: "18px",
                     marginTop: "4%",
                     marginBottom:"6%",
                     marginLeft: "auto", /* 자동으로 왼쪽 여백 조절 */
