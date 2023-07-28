@@ -288,3 +288,14 @@ background-color: #e6e6e6;
   border-radius:20px;
   width:80%;
 }
+
+/*마이페이지*/
+.testresult{
+  text-align: center;
+  background-color: black;
+  opacity: 0.6;
+  color: white;
+  font-size:25px;
+  border-radius:20px;
+  padding: 40px;
+}
