@@ -57,7 +57,8 @@ function MyPage(){
                                 </div>
                         </div>
                     </div>
-                        <div className="mt-6 diary-calendar">
+                    <div className="mt-6 diary-calendar">
+                        <div>
                             <Calendar
                                 onChange={handleDateChange}
                                 value={selectedDate}
@@ -65,7 +66,14 @@ function MyPage(){
                                 className="react-calendar"
                             />
                         </div>
-                        <div className="date">{selectedDate.toDateString()}</div>
+                        <div>
+                            <div  className="date">{selectedDate.toDateString()}</div>
+                            <div className="selecteddatdiary">
+                                이것은 내용이다 그날의 일기에 대한
+                                너무 춥다 으아ㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏ 사장님 에어컨 좀 꺼주세요!!
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </header>

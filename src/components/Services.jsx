@@ -92,7 +92,7 @@ const Services = (e) => {
         <div className="result-content">
           {contentVisible && (
             <div>
-              <div className="result">
+              <div className="emotionresult">
                 {/*감정분석 결과*/}
                 당신은 <span className="fw-boldline">두려움</span>을(를) 느끼고
                 있습니다.
