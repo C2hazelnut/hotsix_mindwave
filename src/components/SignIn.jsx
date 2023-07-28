@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 // const SignIn = () => {
 //   const [id, setId] = useState('');
@@ -31,23 +32,20 @@ const SignIn = () => {
     } catch (error) {
       console.error("회원가입 에러:", error);
     }
-  }
+  };
 
   return (
     <header className="masthead">
-      <section id="signin">
+      <section id="signin" className="mt-7">
         <hr className="sign-divider-light" />
         <h2 className="text-center mt-0 text-white">Sign In</h2>
         <hr className="sign-divider-light" />
-        <div className="text-center text-white">
-          {" "}
-          만약 계정이 없다면&nbsp;<a href="./signup">회원가입하기</a>
-        </div>
+
         <br />
 
-        <div className="row gx-4 gx-lg-5 justify-content-center mb-5">
+        <div className="row gx-4 gx-lg-5 justify-content-center mb-5 mt-2">
           <div className="col-lg-4">
-            <form id="login">
+            <form id="login" style={{ width: "70%", marginLeft:"15%"}}>
               {/* Email input */}
               <div className="form-floating mb-3">
                 <input
@@ -63,7 +61,7 @@ const SignIn = () => {
               </div>
 
               {/* PASSWORD input */}
-              <div className="form-floating mb-3">
+              <div className="form-floating mb-4">
                 <input
                   className="form-control"
                   id="password"
@@ -87,6 +85,17 @@ const SignIn = () => {
                   Login
                 </button>
               </div>
+
+              <div className="text-center text-white mt-5">
+                만약 계정이 없다면&nbsp;&nbsp;
+                <Link className="text-center text-white" to="/signup">
+                  <i
+                    className="fa-solid fa-right-to-bracket"
+                    style={{ color: "#ffffff" }}
+                  ></i>
+                  &nbsp;회원가입하기
+                </Link>
+              </div>
             </form>
           </div>
         </div>
@@ -94,6 +103,5 @@ const SignIn = () => {
     </header>
   );
 };
-
 
 export default SignIn;

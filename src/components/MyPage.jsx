@@ -14,7 +14,7 @@ function MyPage(){
     };
     return(
         <header class="masthead">
-            <hr class="sign-divider-light"/>
+            <hr class="sign-divider-light mt-7"/>
             <h2 class="text-center mt-0 text-white text-center">마이페이지</h2>
             <hr class="sign-divider-light"/>
             <div class="container">
