@@ -81,7 +81,7 @@ const Services = (e) => {
                       {loading ? "당신의 감정은...?" : "진단하기"}
                     </button>
                   </a>
-                )}
+
               </div>
             </div>
           </div>

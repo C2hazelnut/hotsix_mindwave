@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react';
 import Calendar from 'react-calendar';
+import Sidebar from './Sidebar';
 import './Services.css';
 
 function MyPage(){
@@ -16,17 +17,20 @@ function MyPage(){
             <hr class="sign-divider-light mt-7"/>
             <h2 class="text-center mt-0 text-white text-center">마이페이지</h2>
             <hr class="sign-divider-light"/>
-            <br></br>
-            <div className="container">
-                <div class="m-grid">
-                    <div class="mypage-calendar">
+            <div class="container">
+                <div className="col-auto">
+                    <Sidebar />
+                </div>
+                <div class="mypagecontent">
+                    <div className="mt-6 diary-calendar">
                         <Calendar
-                            onChange={handleDateChange}
-                            value={selectedDate}
-                            tileDisabled={tileDisabled}
-                            className="react-calendar"
+                        onChange={handleDateChange}
+                        value={selectedDate}
+                        tileDisabled={tileDisabled}
+                        className="react-calendar"
                         />
                     </div>
+                    <div className="date">{selectedDate.toDateString()}</div>
                 </div>
             </div>
         </header>
