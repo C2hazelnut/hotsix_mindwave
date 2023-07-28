@@ -32,14 +32,7 @@ const SignUp = () => {
         <hr className="sign-divider-light" />
         <h2 className="text-center mt-0 text-white">Sign Up</h2>
         <hr className="sign-divider-light" />
-        <div className="text-center text-white">
-          이미 계정이 있다면&nbsp;
-          <Link className="text-center text-white" to="/signin">
-            로그인하기
-          </Link>
-        </div>
         <br />
-
         <div className="row gx-4 gx-lg-5 justify-content-center mb-5">
           <div className="col-lg-4">
             <form id="signup" onSubmit={handlePasswordFormSubmit}>
@@ -159,6 +152,17 @@ const SignUp = () => {
                   Sign Up !
                 </button>
               </div>
+              <br/>
+              <div className="text-center text-white">
+                이미 계정이 있다면&nbsp;
+                <Link className="text-center text-white" to="/signin">
+                <i
+                  className="fa-solid fa-right-to-bracket"
+                  style={{ color: "#ffffff" }}
+                ></i>
+                  &nbsp;로그인하기
+                </Link>
+              </div>    
             </form>
           </div>
         </div>
