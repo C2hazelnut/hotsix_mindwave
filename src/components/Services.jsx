@@ -41,18 +41,18 @@ const Services = (e) => {
 
   return (
     <>
-      <header className="masthead">
+      <header className="masthead" style={{ height: "60%" }}>
         {/* 마음일지 */}
         <hr className="sign-divider-light mt-7" />
         <h2 className="text-center mt-0 text-white text-center">마음일지</h2>
         <hr className="sign-divider-light" />
         <div>
-          <div className="content">
+          <div className="content d-flex align-items-center justify-content-center ">
             {/* 일기 작성란 */}
-            <div className="diary">
-              <div className="text-white">
+            <div className="diary text-center">
+              <div className="text-white ">
                 <i
-                  className="fa-regular fa-calendar m-2"
+                  className="fa-regular fa-calendar m-2 mb-3"
                   style={{ color: "#ffffff", fontSize: "35px" }}
                 >
                   &nbsp;
@@ -63,7 +63,7 @@ const Services = (e) => {
               <input
                 name="DiaryTitle"
                 placeholder="일기제목을 작성해주세요"
-                className="input mb-2"
+                className="input mb-2 "
               />
               <textarea
                 name="postcontent"
@@ -84,18 +84,6 @@ const Services = (e) => {
                 )}
               </div>
             </div>
-
-            {/* 달력 */}
-            <div className="content">
-              <div className="mt-6 diary-calendar __tile--disabled ">
-                <Calendar
-                  onChange={handleDateChange}
-                  value={selectedDate}
-                  tileDisabled={tileDisabled}
-                  className="react-calendar"
-                />
-              </div>
-            </div>
           </div>
         </div>
       </header>
@@ -104,7 +92,7 @@ const Services = (e) => {
         <div className="result-content">
           {contentVisible && (
             <div>
-              <div class="result">
+              <div className="result">
                 {/*감정분석 결과*/}
                 당신은 <span className="fw-boldline">두려움</span>을(를) 느끼고
                 있습니다.
@@ -114,23 +102,32 @@ const Services = (e) => {
                 스스로에게 위로와 격려의 말을 건네봅시다
               </div>
               <br />
-              <div>
+              <div className="letter">
                 <textarea
                   name="resultcontent"
                   placeholder="스스로에게 하고 싶은 말을 작성해봅시다."
                   className="write wb-4"
                 />
                 <br />
-                <a href="/Services">
-                  <button
-                    className="btn btn-primary btn-xl"
-                    style={{ width: "100%", height: "60px" }}
-                    onClick={handleContentClick}
-                  >
-                    일기 더 작성하기
-                  </button>
-                </a>
               </div>
+              <a href="/Services">
+                <button
+                  className="btn btn-primary btn-xl "
+                  style={{
+                    height: "90px",
+                    fontSize: "20px",
+                    marginTop: "4%",
+                    marginBottom:"6%",
+                    marginLeft: "auto", /* 자동으로 왼쪽 여백 조절 */
+                    marginRight: "auto", /* 자동으로 오른쪽 여백 조절 */
+                    width:"25%",
+                    display: "block" /* block 속성으로 변경 */,
+                  }}
+                  onClick={handleContentClick}
+                >
+                  나에게 편지 보내기
+                </button>
+              </a>
             </div>
           )}
           ;
