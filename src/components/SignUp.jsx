@@ -31,7 +31,7 @@ const SignUp = () => {
       <section id="signup" className="mt-7">
         <hr className="sign-divider-light" />
         <h2 className="text-center mt-0 text-white">Sign Up</h2>
-        <hr className="sign-divider-light" />
+        <hr className="sign-divider-light mb-5" />
 
         <div className="row gx-4 gx-lg-5 justify-content-center mb-5">
           <div className="col-lg-4">
