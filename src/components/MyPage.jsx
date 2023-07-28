@@ -1,6 +1,5 @@
 import React, { useState, useRef } from 'react';
 import Calendar from 'react-calendar';
-import Sidebar from './Sidebar';
 import './Services.css';
 
 function MyPage(){
