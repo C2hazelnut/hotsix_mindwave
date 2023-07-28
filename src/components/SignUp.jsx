@@ -152,6 +152,7 @@ const SignUp = () => {
                   Sign Up !
                 </button>
               </div>
+
             </form> <br/>
             <div className="text-center text-white">
               이미 계정이 있다면&nbsp;
