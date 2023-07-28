@@ -278,7 +278,42 @@ background-color: #e6e6e6;
 
 /*마이페이지*/
 .container {
-  display: flex; 
+  display:flex; 
 }
 
+.sidebar {
+  width: 250px;
+  background-color: black;
+  opacity: 0.5;
+  color: white;
+  padding: 20px;
+  margin-left: 20px;
+  margin-right: 0;
+}
+
+.col-auto{
+  flex: 1;
+}
+
+.sidebar h2 {
+  text-align: center;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0px !important;
+}
+
+.sidebar li {
+  margin: 10px 0;
+  cursor: pointer;
+}
+
+.sidebar ul li :hover {
+  background-color: #007bff;
+}
+
+.mypagecontent{
+  flex: 3;
+}
 

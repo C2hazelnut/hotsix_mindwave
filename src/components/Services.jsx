@@ -73,7 +73,7 @@ const Services = (e) => {
 
             {/* 달력 */}
             <div className="content">
-              <div className="mt-6 diary-calendar __tile--disabled ">
+              <div className="mt-6 diary-calendar">
                 <Calendar
                 onChange={handleDateChange}
                 value={selectedDate}
